@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,100;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+:root
+{
+    /* Paleta de cores */
+
+    --Cor-1: #400101;
+    --Cor-2: #590202;
+    --Cor-3: #8C0303;
+    --Cor-4: #BF0404;
+    --Cor-5: #FFFF;
+    --Cor-6: #F2F2F2;
+
+    /* Tipos de Fontes */
+
+    --Font-weight-1: 100; 
+    --Font-weight-2: 300;
+    --Font-weight-3: 400;
+    --Font-weight-4: 700;
+    --Font-weight-5: 900;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* -~-~-~-~-~-~-~-~-~-~ FORM CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
+
+.HemocentroCadastro
+{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Poppins',sans-serif;
+    z-index: 9;
+}
+
+.HemocentroCadastro::before
+{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.HemocentroCadastro-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 12;
+    max-width: 1400px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    margin: 0 20px;
+}
+
+.HemocentroCadastro-container .HemocentroCadastro-content
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+}
+
+.HemocentroCadastro-content .image-box
+{
+    max-width: 55%;
+}
+
+.HemocentroCadastro-content .image-box img
+{
+    width: 90%;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.HemocentroCadastro-content .topic
+{
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--Cor-4);
+}
+
+.HemocentroCadastro-content form
+{
+    width: 40%;
+    margin-right: 30px;
+}
+
+.HemocentroCadastro-content .input-box
+{
+    height: 50px;
+    width: 100%;
+    margin: 16px 0;
+    position: relative;
+}
+
+.HemocentroCadastro-content .input-box input
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    padding-left: 16px;
+    background: var(--Cor-6);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.HemocentroCadastro-content .input-box input:focus,
+.HemocentroCadastro-content .input-box input:valid
+{
+    border-color: var(--Cor-4);
+    background-color: #fff;
+}
+
+.HemocentroCadastro-content .input-box label
+{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    color: #636c72;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.HemocentroCadastro-content .input-box input:focus ~ label,
+.HemocentroCadastro-content .input-box input:valid ~ label
+{
+    top: 0;
+    left: 12px;
+    padding: 0 3px;
+    display: 14px;
+    color: var(--Cor-4);
+    background: #fff;
+}
+
+.HemocentroCadastro-content .message-box
+{
+    min-height: 100px;
+    position: relative;
+}
+
+.HemocentroCadastro-content .message-box textarea
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    background: var(--Cor-6);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.HemocentroCadastro-content .message-box textarea:focus
+{
+    border-color: var(--Cor-4);
+    background-color: #fff;
+}
+
+.HemocentroCadastro-content .message-box textarea::placeholder
+{
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.HemocentroCadastro-content .message-box label
+{
+    position: absolute;
+    font-size: 16px;
+    color: #636c72;
+    left: 18px;
+    top: 6px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.HemocentroCadastro-content .message-box textarea:focus ~ label
+{
+    left: 12px;
+    top: -10px;
+    color: var(--Cor-4);
+    font-size: 14px;
+    background: #fff;
+}
+
+.HemocentroCadastro-content .input-box input[type="submit"]
+{
+    color: #fff;
+    background: var(--Cor-4);
+    padding-left: 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.HemocentroCadastro-content .input-box input[type="submit"]:hover
+{
+    background-color: var(--Cor-3);
+    border: var(--Cor-3);
+}
+
+.form-card-title
+{
+    margin: 100px 0px 50px 0px;
+    text-align: center;
+    color: var(--Cor-2);
+}
+
+.form-card-content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+.form-card
+{
+    background: var(--Cor-4);
+    width: 500px;
+    height: 480px;
+    margin: 20px;
+    box-shadow: 11px 8px 0px #79c9db;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-card h4
+{
+    font-size: 18px;
+}
+
+.form-card hr
+{
+    color: var(--Cor-1);
+}
+
+.empty-form
+{
+    text-align: center;
+    color: var(--Cor-2);
+}
+
+.empty-form i
+{
+    color: var(--Cor-2);
+    margin-top: 30px;
+    font-size: 80px;
+    margin-bottom: 40px;
+}
+
+.endereco-flex
+{
+    display: flex;
+}
+
+.input-box.numeroHemo 
+{
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.input-box.ruaHemo 
+{
+    margin-top: 0px !important;
+}
+
+/* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
+
+
+/* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */
+@media (max-width:1000px) 
+{
+    .HemocentroCadastro-content .image-box
+    {
+        max-width: 60%;
+    }
+    .HemocentroCadastro-content
+    {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width:900px) 
+{
+    .HemocentroCadastro-container .HemocentroCadastro-content
+    {
+        width: 100%;
+    }
+
+    .HemocentroCadastro-content .image-box
+    {
+        display: none;
+    }
+
+    .HemocentroCadastro-content form
+    {
+        width: 100%;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .endereco-flex
+    {
+        display: block;
+    }
+
+    .input-box.numeroHemo 
+    {
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+
+/* -------------------- FIM RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */

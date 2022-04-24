@@ -30,8 +30,6 @@ function formulario()
     var diretor = document.getElementById("diretorHemo").value;
     var diretorCont = document.getElementById("diretorHemo");
 
-    // comecei
-
     var cidade = document.getElementById("cidadeHemo").value;
     var cidadeCout = document.getElementById("cidadeHemo");
 

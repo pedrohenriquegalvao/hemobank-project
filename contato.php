@@ -1,3 +1,45 @@
+<?php
+
+    if(isset($_POST['submit']))
+    {
+        /*
+        print_r('Nome: ' . $_POST['nomeHemo']);
+        print_r('<br>');
+        print_r('Email: ' . $_POST['emailHemo']);
+        print_r('<br>');
+        print_r('Telefone: ' . $_POST['telefoneHemo']);
+        print_r('<br>');
+        print_r('Diretor: ' . $_POST['diretorHemo']);
+        print_r('<br>');
+        print_r('Cidade: ' . $_POST['cidadeHemo']);
+        print_r('<br>');
+        print_r('Bairro: ' . $_POST['BairroHemo']);
+        print_r('<br>');
+        print_r('Rua: ' . $_POST['ruaHemo']);
+        print_r('<br>');
+        print_r('Numero: ' . $_POST['numeroHemo']);
+        print_r('<br>');
+        print_r('Mensagem: ' . $_POST['mensagemCont']);
+        */
+
+        include_once('../config.php');
+
+        $nomeHemo = $_POST['nomeHemo'];
+        $emailHemo = $_POST['emailHemo'];
+        $telefoneHemo = $_POST['telefoneHemo'];
+        $diretorHemo = $_POST['diretorHemo'];
+        $cidadeHemo = $_POST['cidadeHemo'];
+        $BairroHemo = $_POST['BairroHemo'];
+        $ruaHemo = $_POST['ruaHemo'];
+        $numeroHemo = $_POST['numeroHemo'];
+        $mensagemCont = $_POST['mensagemCont'];
+
+        // OLHE ENTRE PARENTESES DO HEMOCENTRO SUBSTITUA AQUILO PELOS ATRIBUTOS DA TABELA
+        $result = mysqli_query($conexao, "INSERT INTO Hemocentro(nome,email,telefone,diretor,cidade,bairro,rua,numero,mensagem) VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont')");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,45 +63,46 @@
                 <div class="image-box">
                     <img src="img/blood-work-illustration@3x.png" alt="">
                 </div>
-                <form>
+                <form action="formulario.php" method="POST">
                     <div class="topic">Cadastro Hemocentro</div>
+
                     <div class="input-box">
-                        <input type="text" required id="nomeHemo">
+                        <input type="text" required id="nomeHemo" name="nomeHemo">
                         <label>Nome Hemocentro</label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required id="emailHemo">
+                        <input type="text" required id="emailHemo" name="emailHemo">
                         <label>Email</label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required id="telefoneHemo">
+                        <input type="text" required id="telefoneHemo" name="telefoneHemo">
                         <label>Telefone</label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required id="diretorHemo">
+                        <input type="text" required id="diretorHemo" name="diretorHemo">
                         <label>Diretor</label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required id="cidadeHemo">
+                        <input type="text" required id="cidadeHemo" name="cidadeHemo">
                         <label>Cidade</label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" required id="ruaHemo">
+                        <input type="text" required id="BairroHemo" name="BairroHemo">
                         <label>Bairro</label>
                     </div>
 
                     <div class="endereco-flex">
                         <div class="input-box ruaHemo">
-                            <input type="text" required id="ruaHemo">
+                            <input type="text" required id="ruaHemo" name="ruaHemo">
                             <label>Rua</label>
                         </div>
                         <div class="input-box numeroHemo">
-                            <input type="text" required id="numeroHemo">
+                            <input type="text" required id="numeroHemo" name="numeroHemo">
                             <label>Número</label>
                         </div>
                     </div>

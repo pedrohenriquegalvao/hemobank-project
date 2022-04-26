@@ -1,20 +1,3 @@
-var form = [];
-var listaForm = [];
-
-/* ~-~-~-~-~- NAVBAR SCRIPT ~-~-~-~-~- */
-
-$(document).ready(function()
-{
-  if(JSON.parse(window.localStorage.getItem('Formulario')) != undefined)
-    {
-        listaForm = JSON.parse(window.localStorage.getItem('Formulario'));
-    }
-    else
-    {
-        listaForm = [];
-    }
-});
-
 function formulario()
 {
 
@@ -136,29 +119,6 @@ function formulario()
         alert("O campo Bairro deve possuir no máximo 300 caracteres");
     }
 
-
-    if(nome.length >= 8 && email.indexOf("@") != '-1' && telefone.length >= 5 && diretor.length >= 10 
-    && diretor.length < 320 && cidade.length >= 3 && cidade.length < 30 && bairro.length >= 2 &&
-     bairro.length < 30 && numero.length >= 1 && numero.length < 4 && mensagem.length >= 5 && mensagem.length < 300)
-    {
-        form.push(nome);
-        form.push(email);
-        form.push(telefone);
-        form.push(diretor);
-        form.push(cidade);
-        form.push(bairro);
-        form.push(numero);
-        form.push(mensagem);
-
-
-
-        listaForm.push(form);
-        console.log(listaForm);
-        window.localStorage.setItem("Formulario", JSON.stringify(listaForm));
-
-        successPopUp();
-    }
-
     document.getElementById("nomeCont").value = "";
     document.getElementById("emailCont").value = "";
     document.getElementById("telefoneCont").value = "";
@@ -167,23 +127,4 @@ function formulario()
     document.getElementById("bairroCont").value = "";
     document.getElementById("numeroCont").value = "";
     document.getElementById("mensagemCont").value = "";
-}
-
-function successPopUp()
-{
-    var conteudo = "";
-
-    conteudo += '<div class="popup-content">';
-    conteudo += '<div class="popup-img">';
-    conteudo += '<img src="../img/gif-check.gif" alt="">';
-    conteudo += '</div>';
-    conteudo += '<div class="popup-p">';
-    conteudo += '<p>Formulário Enviado com Sucesso!</p>';
-    conteudo += '</div>';
-    conteudo += '<div class="popup-button">';
-    conteudo += '<a href="contato.html"><button>Confirmar</button></a>';
-    conteudo += '</div>';
-    conteudo += '</div>';
-
-    document.getElementById("popup-check").innerHTML += conteudo;
 }

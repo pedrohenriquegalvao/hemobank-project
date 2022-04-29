@@ -72,17 +72,16 @@
     VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', '$fotoHemo')";
     }
    
-    /*
+    
     if(mysqli_query($conexao, $result))
     {
-        echo "Hemocentro Cadastrado com sucesso!";
-
+        echo '';
     }
     else
     {
         echo "erro".mysqli_connect_errno($conexao);
     }
-    */
+    
 
 ?>
 
@@ -106,7 +105,7 @@
 <script>
     setTimeout(function() 
     {
-        window.location.href = "hemocentros.html";
+        window.location.href = "hemocentros.php";
     }, 3000);
 </script>
 

@@ -154,11 +154,12 @@
 
 .HemocentroCadastro-content .message-box
 {
+    
     min-height: 100px;
     position: relative;
 }
 
-.HemocentroCadastro-content .message-box textarea
+.HemocentroCadastro-content .message-box input
 {
     position: absolute;
     height: 100%;
@@ -172,13 +173,13 @@
     transition: all 0.3s ease;
 }
 
-.HemocentroCadastro-content .message-box textarea:focus
+.HemocentroCadastro-content .message-box input:focus
 {
     border-color: var(--Cor-4);
     background-color: #fff;
 }
 
-.HemocentroCadastro-content .message-box textarea::placeholder
+.HemocentroCadastro-content .message-box input::placeholder
 {
     font-size: 16px;
     padding-left: 5px;
@@ -195,7 +196,7 @@
     transition: all 0.3s ease;
 }
 
-.HemocentroCadastro-content .message-box textarea:focus ~ label
+.HemocentroCadastro-content .message-box input:focus ~ label
 {
     left: 12px;
     top: -10px;
@@ -290,6 +291,37 @@
 {
     margin-top: 0px !important;
 }
+
+/* -~-~-~-~-~-~-~-~-~-~ Estilo do Input File -~-~-~-~-~-~-~-~-~-~ */
+
+input[type="file"] {
+    display: none;
+}
+
+.input-file{
+    margin: auto;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: #BF0404;
+    border-radius: 5px;
+    color: #FFF;
+    display: block;
+    margin-top: 12px;
+    cursor: pointer;
+    justify-items: center;
+    transition: 0.5s ease;
+}
+
+.label-hemo{
+    background: #BF0404;
+    height: 20px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s ease;
+}
+
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 

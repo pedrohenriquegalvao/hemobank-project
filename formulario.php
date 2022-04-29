@@ -50,13 +50,32 @@
     $ruaHemo = $_POST['ruaHemo'];
     $numeroHemo = $_POST['numeroHemo'];
     $mensagemCont = $_POST['mensagemCont'];
+     
+    switch ($_FILES['fotoHemo']['error']) {
+        case UPLOAD_ERR_OK:
+            break;
+        case UPLOAD_ERR_NO_FILE:
+            throw new RuntimeException('No file sent.');
+        case UPLOAD_ERR_INI_SIZE:
+        case UPLOAD_ERR_FORM_SIZE:
+            throw new RuntimeException('Exceeded filesize limit.');
+        default:
+            throw new RuntimeException('Unknown errors.');
+    }
 
-    $result = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem) 
-    VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont')";
-
+    if ($_FILES['fotoHemo']['size'] == 0) { // Não recebeu uma imagem binária
+        $result = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
+    VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', NULL)";
+    } else {                              // Recebeu uma imagem binária
+        $fotoHemo = addslashes(file_get_contents($_FILES['fotoHemo']['tmp_name'])); // Prepara para salvar em BD
+        $result = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
+    VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', '$fotoHemo')";
+    }
+   
     if(mysqli_query($conexao, $result))
     {
         echo "Hemocentro Cadastrado com sucesso!";
+
     }
     else
     {

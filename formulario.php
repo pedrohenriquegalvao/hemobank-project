@@ -72,6 +72,7 @@
     VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', '$fotoHemo')";
     }
    
+    /*
     if(mysqli_query($conexao, $result))
     {
         echo "Hemocentro Cadastrado com sucesso!";
@@ -81,5 +82,32 @@
     {
         echo "erro".mysqli_connect_errno($conexao);
     }
+    */
 
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sucess-form-hemo">
+        <h1 class="Text">Hemocentro Cadastrado com sucesso!</h1>
+        <img class="" src="img/check.png" alt="">
+        <h4 class="Text">Você será redirecionado a home do site em alguns segundos.</h4>
+    </div>
+</body>
+
+<script>
+    setTimeout(function() 
+    {
+        window.location.href = "hemocentros.html";
+    }, 3000);
+</script>
+
+</html>

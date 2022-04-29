@@ -322,6 +322,99 @@ input[type="file"] {
     transition: 0.5s ease;
 }
 
+/* -~-~-~-~-~-~-~-~-~-~ PÁGINA SUCESSO CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
+
+.sucess-form-hemo 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--Cor-2);
+    color: white;
+}
+
+.sucess-form-hemo img 
+{
+    width: 400px;
+}
+
+.sucess-form-hemo .Text
+{
+    margin: 50px;
+}
+
+/* -~-~-~-~-~-~-~-~-~-~ CARDS DOS HEMOCENTROS -~-~-~-~-~-~-~-~-~-~ */
+
+.flex-box-card-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-hemo
+{
+    text-align: center;
+    background: #FFF;
+    width: 370px;
+    margin: 20px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card-hemo img
+{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 280px;
+    width: 100%;
+}
+
+h2.title 
+{
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.endereco 
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.endereco i
+{
+    margin-right: 10px;
+    color: var(--Cor-3);
+}
+
+.card-hemo button 
+{
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--Cor-3);
+    color: white;
+    transition: 0.5s ease;
+}
+
+.card-hemo button:hover
+{
+    background-color: var(--Cor-2);
+}
+
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 

@@ -438,15 +438,20 @@ button.card-btn.edit-btn:hover
 button.card-btn.edit-btn a 
 {
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
 }
 
-.edit-icon
+.edit-icon 
 {
-    width: 330px;
-    height: 40px;
     display: flex !important;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 

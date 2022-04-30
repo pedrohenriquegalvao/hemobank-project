@@ -41,6 +41,7 @@ $result = $conexao->query($sql);
             echo "<button class='card-btn edit-btn'>
                     <a href='edit.php?CodHemocentro=$user_data[CodHemocentro]'>
                         <i class='fa-solid fa-pen-to-square edit-icon'></i>
+                        Editar Hemocentro
                     </a>
                 </button>"
             ?>

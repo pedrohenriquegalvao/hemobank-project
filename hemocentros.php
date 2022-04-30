@@ -28,15 +28,19 @@ $result = $conexao->query($sql);
             <?php } ?>
             <h2 class="title"><?php echo $user_data['Nome'] ?></h2>
             <!--<?php echo "h2 class='title'>".$user_data['Nome']."</h2>"; ?>-->
-            <div class="endereco">
+            <div class="icon-flex-cards">
                 <i class="fa-solid fa-location-dot"></i>
-                <p>Localização: <?php echo $user_data['Cidade'] ?></p>
+                <span>Localização: </span><p><?php echo $user_data['Cidade'] ?></p>
+            </div>
+            <div class="icon-flex-cards">
+                <i class="fa-solid fa-phone"></i>
+                <span>Telefone: </span><p><?php echo $user_data['Telefone'] ?></p>
             </div>
             <button class="card-btn">Saiba Mais</button>
             <?php 
             echo "<button class='card-btn edit-btn'>
                     <a href='edit.php?CodHemocentro=$user_data[CodHemocentro]'>
-                        <i class='fa-solid fa-pen-to-square'></i>
+                        <i class='fa-solid fa-pen-to-square edit-icon'></i>
                     </a>
                 </button>"
             ?>

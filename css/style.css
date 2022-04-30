@@ -385,17 +385,24 @@ h2.title
     font-weight: 500;
 }
 
-.endereco 
+.icon-flex-cards
 {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin: 15px 0px 0px 0px;
 }
 
-.endereco i
+.icon-flex-cards i
 {
     margin-right: 10px;
     color: var(--Cor-3);
+}
+
+.icon-flex-cards span 
+{
+    margin-right: 6px;
+    font-weight: 600;
 }
 
 .card-hemo .card-btn
@@ -431,6 +438,15 @@ button.card-btn.edit-btn:hover
 button.card-btn.edit-btn a 
 {
     color: black;
+}
+
+.edit-icon
+{
+    width: 330px;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 

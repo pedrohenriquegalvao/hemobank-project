@@ -32,7 +32,14 @@ $result = $conexao->query($sql);
                 <i class="fa-solid fa-location-dot"></i>
                 <p>Localização: <?php echo $user_data['Cidade'] ?></p>
             </div>
-            <button>Saiba Mais</button>
+            <button class="card-btn">Saiba Mais</button>
+            <?php 
+            echo "<button class='card-btn edit-btn'>
+                    <a href='edit.php?CodHemocentro=$user_data[CodHemocentro]'>
+                        <i class='fa-solid fa-pen-to-square'></i>
+                    </a>
+                </button>"
+            ?>
         </div>
         <?php } ?>
     </div>

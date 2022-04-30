@@ -398,7 +398,7 @@ h2.title
     color: var(--Cor-3);
 }
 
-.card-hemo button 
+.card-hemo .card-btn
 {
     margin-top: 20px;
     width: 100%;
@@ -414,6 +414,16 @@ h2.title
 {
     background-color: var(--Cor-2);
 }
+
+button.card-btn.edit-btn {
+    background-color: #FFC107;
+    color: black;
+}
+
+button.card-btn.edit-btn a {
+    text-decoration: none;
+}
+
 
 /* -~-~-~-~-~-~-~-~-~-~ TABELA DE HEMOCENTROS -~-~-~-~-~-~-~-~-~-~ */
 
@@ -476,6 +486,11 @@ h2.title
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }/*
+
+/* -~-~-~-~-~-~-~-~-~-~ EDIT HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
+
+
+
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
 

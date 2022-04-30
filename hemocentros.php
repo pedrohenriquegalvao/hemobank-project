@@ -56,9 +56,12 @@ $result = $conexao->query($sql);
                     <th scope="col">...</th>
                 </tr>
             </thead>
+            -->
+            <!--
             <tbody>
                 <?php
                 /*
+                
                     while($user_data = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>".$user_data['CodHemocentro']."</td>";
@@ -82,9 +85,9 @@ $result = $conexao->query($sql);
                         echo "<td>Ações</td>";
                         echo "</tr>";
                     }
-                }
+                }*/
                 ?>
-                /*
+                
             </tbody>
         </table>
         <button class="button-back-form" onclick="location.href = 'formulario.html'">

@@ -400,6 +400,7 @@ h2.title
 
 .card-hemo .card-btn
 {
+    cursor: pointer;
     margin-top: 20px;
     width: 100%;
     height: 40px;
@@ -415,13 +416,21 @@ h2.title
     background-color: var(--Cor-2);
 }
 
-button.card-btn.edit-btn {
-    background-color: #FFC107;
-    color: black;
+button.card-btn.edit-btn 
+{
+    cursor: pointer;
+    background-color: #ffb407;
+    transition: 0.5s ease;
 }
 
-button.card-btn.edit-btn a {
-    text-decoration: none;
+button.card-btn.edit-btn:hover
+{
+    background-color: #ffc94b;
+}
+
+button.card-btn.edit-btn a 
+{
+    color: black;
 }
 
 

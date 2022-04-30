@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 include_once("config.php");
 
 $sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
@@ -20,17 +21,23 @@ $result = $conexao->query($sql);
 <body>
 
     <div class="flex-box-card-container">
+        <?php while($user_data = mysqli_fetch_assoc($result)) { ?>
         <div class="card-hemo">
-            <img src="DSC03039.jpg" alt="">
-            <h2 class="title"></h2>
+            <?php if ($user_data['FotoHemo']) { ?>
+            <img class="img-hemo col-foto-hemo" id="imagemSelecionada" src="data:image/png;base64,<?= base64_encode($user_data['FotoHemo']) ?>" />
+            <?php } ?>
+            <h2 class="title"><?php echo $user_data['Nome'] ?></h2>
+            <!--<?php echo "h2 class='title'>".$user_data['Nome']."</h2>"; ?>-->
             <div class="endereco">
                 <i class="fa-solid fa-location-dot"></i>
-                <p>Localização: </p>
+                <p>Localização: <?php echo $user_data['Cidade'] ?></p>
             </div>
             <button>Saiba Mais</button>
         </div>
+        <?php } ?>
     </div>
 
+    <!--
     <section class="table-hemocentro-container">
         <table class="tabela-hemo">
             <thead>
@@ -51,6 +58,7 @@ $result = $conexao->query($sql);
             </thead>
             <tbody>
                 <?php
+                /*
                     while($user_data = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>".$user_data['CodHemocentro']."</td>";
@@ -76,12 +84,14 @@ $result = $conexao->query($sql);
                     }
                 }
                 ?>
+                /*
             </tbody>
         </table>
         <button class="button-back-form" onclick="location.href = 'formulario.html'">
                 <label for="">Voltar para Formulário</label>
         </button>
     </section>
+    -->
     
 </body>
 </html>

@@ -375,7 +375,7 @@ input[type="file"] {
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: 200px;
-    width: 100%;
+    width: 330px;
 }
 
 h2.title 
@@ -417,6 +417,7 @@ h2.title
 
 /* -~-~-~-~-~-~-~-~-~-~ TABELA DE HEMOCENTROS -~-~-~-~-~-~-~-~-~-~ */
 
+/*
 .tabela-hemo {
     border-collapse: collapse;
     width: 95vw;

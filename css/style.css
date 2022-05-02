@@ -544,19 +544,19 @@ h2.title
     background-color: var(--Cor-2);
 }
 
-button.card-btn.edit-btn 
+button.card-btn.edit-btn, button.card-btn.delete-btn
 {
     cursor: pointer;
     background-color: #ffb407;
     transition: 0.5s ease;
 }
 
-button.card-btn.edit-btn:hover
+button.card-btn.edit-btn:hover, button.card-btn.delete-btn:hover
 {
     background-color: #ffc94b;
 }
 
-button.card-btn.edit-btn a 
+button.card-btn.edit-btn a, button.card-btn.delete-btn a 
 {
     color: black;
     display: flex;
@@ -567,13 +567,15 @@ button.card-btn.edit-btn a
     font-size: 15px;
 }
 
-.edit-icon 
+.edit-icon, .delete.icon 
 {
     display: flex !important;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
 }
+
+
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DO HEMOCENTRO APOS CLICAR NO CARD -=-=-=-=-=-=-=-=-=-= */
 

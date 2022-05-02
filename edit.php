@@ -24,7 +24,6 @@
         } else {
             header('Location: hemocentros.php');
         }
-    
     }
 
 ?>

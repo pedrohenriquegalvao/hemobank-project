@@ -25,7 +25,7 @@ $result = $conexao->query($sql);
 </head>
 <body>
 
-    <nav>
+<nav>
         <a href="#"><img src="img/logo.png" class="nav-logo"></a>
 
         <!-- BOTAO PARA ABRIR O MENU -->
@@ -47,7 +47,7 @@ $result = $conexao->query($sql);
                 <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
 
                 <div class="item">
-                    <a class="sub-btn"><i class="fas fa-globe-americas"></i>Cadastro<i
+                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i></i>Cadastro<i
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
                         <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>

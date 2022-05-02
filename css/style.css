@@ -38,14 +38,14 @@ nav
     background: #3d040a;
 }
 
-.nav-logo
+nav .nav-logo
 {
     width: 170px;
     float: right;
     margin-right: 30px;
 }
 
-.side-bar 
+nav .side-bar 
 {
     /*background: rgba(255, 255, 255, 0.1);*/
     /*backdrop-filter: blur(15px);*/
@@ -60,31 +60,31 @@ nav
     transition-property: left;
 }
 
-.side-bar::-webkit-scrollbar
+nav.side-bar::-webkit-scrollbar
 {
     display: none;
 }
 
-.side-bar.active 
+nav .side-bar.active 
 {
     left: 0;
     transition: 0.8s;
     z-index: 20;
 }
 
-.side-bar .menu 
+nav .side-bar .menu 
 {
     width: 100%;
     margin-top: 80px;
 }
 
-.side-bar .menu .item 
+nav .side-bar .menu .item 
 {
     position: relative;
     cursor: pointer;
 }
 
-.side-bar .menu .item a 
+nav .side-bar .menu .item a 
 {
     color: rgb(255, 255, 255);
     font-size: 16px;
@@ -94,19 +94,19 @@ nav
     line-height: 60px;
 }
 
-.side-bar .menu .item a:hover 
+nav .side-bar .menu .item a:hover 
 {
     color: rgb(255, 255, 255);
     background: #220205;
     transition: 0.5s ease;
 }
 
-.side-bar .menu .item i 
+nav .side-bar .menu .item i 
 {
     margin-right: 15px;
 }
 
-.side-bar .menu .item a .dropdown 
+nav .side-bar .menu .item a .dropdown 
 {
     position: absolute;
     right: 0;
@@ -114,22 +114,22 @@ nav
     transition: 0.5s ease;
 }
 
-.side-bar .menu .item .sub-menu 
+nav .side-bar .menu .item .sub-menu 
 {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.side-bar .menu .item .sub-menu a 
+nav .side-bar .menu .item .sub-menu a 
 {
     padding-left: 80px;
 }
 
-.rotate 
+nav .rotate 
 {
     transform: rotate(90deg);
 }
 
-.close-btn 
+nav .close-btn 
 {
     position: absolute;
     color: rgb(255, 255, 255);
@@ -139,7 +139,7 @@ nav
     cursor: pointer;
 }
 
-.menu-btn 
+nav .menu-btn 
 {
     top: -4px;
     position: absolute;
@@ -474,6 +474,7 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .card-hemo
@@ -613,7 +614,7 @@ button.card-btn.edit-btn a
 
 .description-content button 
 {
-    margin-top: 40px;
+    margin-top: 10px;
     border: none;
     width: 250px;
     height: 45px;

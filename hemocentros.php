@@ -84,15 +84,32 @@ $result = $conexao->query($sql);
                     </a>
                 </button>";
             echo "<button class='card-btn delete-btn'>
-                    <a href='delete.php?CodHemocentro=$user_data[CodHemocentro]'>
+                    <a onclick='alerta()'>
                         <i class='fa-solid fa-trash delete-icon'></i>
                         Deletar
                     </a>
-                </button>"
+                </button>";
             ?>
         </div>
         <?php } ?>
     </div>
 
+    <div class="alert-container">
+        <div class="alert-content">
+            <p>Você realmente deseja deletar esse hemocentro?</p>
+            <button>Cancelar</button>
+            <button>Confirmar</button>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+    function alerta() {
+        if(window.confirm('Você realmente deseja deletar esse hemocentro?')) {
+            console.log('confirmou')
+            location.href='delete.php?CodHemocentro=$user_data[CodHemocentro]';
+        } else {
+            console.log('cancelou')
+        }
+    }
+</script>

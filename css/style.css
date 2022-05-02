@@ -601,6 +601,13 @@ i.fa-solid.fa-trash.delete-icon
     margin-right: 10px;
 }
 
+/* -~-~-~-~-~-~-~-~-~-~ ALERTA DE DELETE -~-~-~-~-~-~-~-~-~-~ */
+.alert-content {
+    position: absolute;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+}
 
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DO HEMOCENTRO APOS CLICAR NO CARD -=-=-=-=-=-=-=-=-=-= */
@@ -713,6 +720,7 @@ section.hemo-desc
         margin-left: 0px;
     }
 }
+
 
 /* -------------------- ESTOQUE HEMOCENTRO -------------------- */
 

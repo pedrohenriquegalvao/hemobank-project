@@ -1,4 +1,4 @@
-function formulario()
+/*function formulario()
 {
 
     var nome = document.getElementById("nomeHemo").value;

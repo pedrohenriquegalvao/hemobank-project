@@ -88,7 +88,7 @@ $result = $conexao->query($sql);
                         <i class='fa-solid fa-trash delete-icon'></i>
                         Deletar
                     </a>
-        </button>"
+                </button>"
             ?>
         </div>
         <?php } ?>

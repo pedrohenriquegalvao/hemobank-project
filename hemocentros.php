@@ -83,8 +83,8 @@ $result = $conexao->query($sql);
                         Editar Hemocentro
                     </a>
                 </button>";
-            echo "<button class='card-btn delete-btn'>
-                    <a onclick='alerta()'>
+            echo "<button class='card-btn delete-btn' id='delete-btn'>
+                    <a onclick='alerta(".$user_data['CodHemocentro'].")'>
                         <i class='fa-solid fa-trash delete-icon'></i>
                         Deletar
                     </a>
@@ -94,22 +94,17 @@ $result = $conexao->query($sql);
         <?php } ?>
     </div>
 
-    <div class="alert-container">
-        <div class="alert-content">
-            <p>Você realmente deseja deletar esse hemocentro?</p>
-            <button>Cancelar</button>
-            <button>Confirmar</button>
-        </div>
-    </div>
 </body>
 </html>
 <script>
-    function alerta() {
-        if(window.confirm('Você realmente deseja deletar esse hemocentro?')) {
-            console.log('confirmou')
-            location.href='delete.php?CodHemocentro=$user_data[CodHemocentro]';
+    function alerta(CodHemocentro) {
+        var confirmacao = confirm('Você realmente deseja deletar esse hemocentro?')
+        if(confirmacao == true) {
+            console.log('confirmou');
+            window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
         } else {
             console.log('cancelou')
         }
     }
-</script>
+    </script>
+   

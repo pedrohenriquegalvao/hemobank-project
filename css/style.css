@@ -603,11 +603,16 @@ i.fa-solid.fa-trash.delete-icon
 
 /* -~-~-~-~-~-~-~-~-~-~ ALERTA DE DELETE -~-~-~-~-~-~-~-~-~-~ */
 .alert-content {
+    display: none;
     position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -150px;
     background-color: red;
-    width: 300px;
+    width: 80px;
     height: 300px;
 }
+
 
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DO HEMOCENTRO APOS CLICAR NO CARD -=-=-=-=-=-=-=-=-=-= */

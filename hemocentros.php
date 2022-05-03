@@ -83,8 +83,8 @@ $result = $conexao->query($sql);
                         Editar Hemocentro
                     </a>
                 </button>";
-            echo "<button class='card-btn delete-btn' id='delete-btn'>
-                    <a onclick='alerta(".$user_data['CodHemocentro'].")'>
+            echo "<button class='card-btn delete-btn' onclick='alerta(".$user_data['CodHemocentro'].")'>
+                    <a>
                         <i class='fa-solid fa-trash delete-icon'></i>
                         Deletar
                     </a>
@@ -94,17 +94,58 @@ $result = $conexao->query($sql);
         <?php } ?>
     </div>
 
+    <!-- POP UP ALERTA DELETAR -->
+    
+    <div class="container-delete-hemo-popup">
+
+        <div class="delete-hemo-popup-box">
+          <i class="fas fa-exclamation"></i>
+          <h1>O Hemocentro será removido permanentemente!</h1>
+          <label>Tem certeza que deseja realizar essa ação?</label>
+          <div class="delete-hemo-btns">
+            <a href="#" class="delete-hemo-btn1">Cancelar</a>
+            <a href="#" class="delete-hemo-btn2">Deletar Hemocentro</a>
+          </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
 <script>
-    function alerta(CodHemocentro) {
-        var confirmacao = confirm('Você realmente deseja deletar esse hemocentro?')
-        if(confirmacao == true) {
-            console.log('confirmou');
+    /*function alerta(CodHemocentro) {
+        window.alert('apertei ' + CodHemocentro)
+        var btn_delete = document.querySelector('.delete-btn');
+        var btn_cancel = document.querySelector('.delete-hemo-btn1');
+        var btn_confirm = document.querySelector('.delete-hemo-btn2');
+        var pop_up_box = document.querySelector('.container-delete-hemo-popup');
+        btn_delete.addEventListener('click', function() {
+            pop_up_box.style.display = 'block';
+        });
+        btn_cancel.addEventListener('click', function(){
+            pop_up_box.style.display = 'none';
+        });
+        btn_confirm.addEventListener('click', function(){
+            pop_up_box.style.display = 'none';
             window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
-        } else {
-            console.log('cancelou')
-        }
+        });
+    }*/
+    function alerta(CodHemocentro) {
+        var btn_delete = document.querySelector('.delete-btn');
+        var btn_cancel = document.querySelector('.delete-hemo-btn1');
+        var btn_confirm = document.querySelector('.delete-hemo-btn2');
+        var pop_up_box = document.querySelector('.container-delete-hemo-popup');
+        
+        pop_up_box.style.display = 'block';
+        
+        btn_cancel.addEventListener('click', function(){
+            pop_up_box.style.display = 'none';
+            document.location.reload(true);
+        });
+        btn_confirm.addEventListener('click', function(){
+            pop_up_box.style.display = 'none';
+            window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
+        });
     }
     </script>
    

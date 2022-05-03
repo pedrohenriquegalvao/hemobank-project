@@ -1,4 +1,5 @@
 <?php 
+//die();
     if(!empty($_GET['CodHemocentro'])) {
 
         include_once('config.php');

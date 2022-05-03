@@ -602,15 +602,90 @@ i.fa-solid.fa-trash.delete-icon
 }
 
 /* -~-~-~-~-~-~-~-~-~-~ ALERTA DE DELETE -~-~-~-~-~-~-~-~-~-~ */
-.alert-content {
-    display: none;
-    position: absolute;
-    top: 0;
+.container-delete-hemo-popup
+{
+    position: fixed !important;
+    top: 50%;
     left: 50%;
-    margin-left: -150px;
-    background-color: red;
-    width: 80px;
-    height: 300px;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+.delete-hemo-popup-box
+{
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 400px;
+    background: #f2f2f2;
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid #d9d8d8;
+    z-index: 9999;
+}
+
+.delete-hemo-popup-box i
+{
+  font-size: 60px;
+  color: var(--Cor-3);
+  border: 5px solid var(--Cor-3);
+  padding: 20px 40px;
+  border-radius: 50%;
+  margin: -10px 0 20px 0;
+}
+
+.delete-hemo-popup-box h1
+{
+  font-size: 20px;
+  color: #1b2631;
+  margin-bottom: 5px;
+}
+
+.delete-hemo-popup-box label
+{
+  font-size: 16px;
+  color: #404040;
+}
+
+.delete-hemo-popup-box .delete-hemo-btns
+{
+  margin: 40px 0 0 0;
+}
+
+.delete-hemo-btns .delete-hemo-btn1, .delete-hemo-btns .delete-hemo-btn2
+{
+  background: #727272;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #505050;
+  padding: 10px 13px;
+  transition: .5s ease;
+}
+
+.delete-hemo-btns .delete-hemo-btn2
+{
+  margin-left: 20px;
+  background: var(--Cor-3);
+  border: 1px solid var(--Cor-2);
+}
+
+.delete-hemo-btns .delete-hemo-btn1:hover
+{
+  background: #464646;
+}
+
+.delete-hemo-btns .delete-hemo-btn2:hover
+{
+  background: var(--Cor-2);
 }
 
 

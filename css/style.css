@@ -816,6 +816,11 @@ section.hemo-desc
     overflow: hidden;
 }
 
+.water.hemocomponente
+{
+    background: rgb(255, 187, 0);
+}
+
 .water::after 
 {
     content: "";
@@ -863,6 +868,11 @@ section.hemo-desc
 {
     display: flex;
     justify-content: center;
+}
+
+.estoque-content.hemocomponente
+{
+    display: block;
 }
 
 .cards-sang-estoque 
@@ -931,6 +941,29 @@ section.hemo-desc
     padding-left: 25px;
 }
 
+.orientacao-container.hemocomponente 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.orientacao-content.hemocomponente
+{
+    display: flex;
+}
+
+.situacao-estoque-container.hemocomponente
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
 .water.estavel::after
 {
     top: -451px;
@@ -956,6 +989,11 @@ section.hemo-desc
     margin-top: 100px;
 }
 
+.update-estoque-container.hemocomponente
+{
+    text-align: center;
+}
+
 button.update-estoque 
 {
     width: 200px;
@@ -974,7 +1012,19 @@ button.update-estoque:hover
     background: #3d3d3d;
 }
 
+.descri-hemocomponentes 
+{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.descri-card 
+{
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+    width: 230px;
+}
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 

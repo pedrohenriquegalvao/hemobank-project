@@ -642,11 +642,12 @@ i.fa-solid.fa-trash.delete-icon
   margin: -10px 0 20px 0;
 }
 
-.delete-hemo-popup-box h1
+.delete-hemo-popup-box h1 
 {
-  font-size: 20px;
-  color: #1b2631;
-  margin-bottom: 5px;
+    font-size: 20px;
+    color: #1b2631;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .delete-hemo-popup-box label
@@ -669,6 +670,7 @@ i.fa-solid.fa-trash.delete-icon
   border: 1px solid #505050;
   padding: 10px 13px;
   transition: .5s ease;
+  text-decoration: none;
 }
 
 .delete-hemo-btns .delete-hemo-btn2
@@ -688,7 +690,26 @@ i.fa-solid.fa-trash.delete-icon
   background: var(--Cor-2);
 }
 
+@media (max-width: 450px)
+{
+    .delete-hemo-popup-box
+    {
+        width: 300px;
+    }
 
+    .delete-hemo-popup-box .delete-hemo-btns 
+    {
+        display: grid;
+    }
+
+    .delete-hemo-btns .delete-hemo-btn2 
+    {
+        background: var(--Cor-3);
+        border: 1px solid var(--Cor-2);
+        margin: 20px 0px;
+        width: 218px;
+    }
+}
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DO HEMOCENTRO APOS CLICAR NO CARD -=-=-=-=-=-=-=-=-=-= */
 

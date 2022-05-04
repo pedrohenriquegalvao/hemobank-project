@@ -692,6 +692,12 @@ i.fa-solid.fa-trash.delete-icon
   background: var(--Cor-2);
 }
 
+.card-btn.saiba-mais-btn a
+{
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 450px)
 {
     .delete-hemo-popup-box

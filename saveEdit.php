@@ -32,7 +32,8 @@
         }
         $result = $conexao->query($sqlUpdate);
         } 
-    header('Location: hemocentros.php');
-
-
+    header("Location: hemocentro.php?CodHemocentro=" . $CodHemocentro);
+        /*header('Location: hemocentro.php');
+         hemocentro.php?CodHemocentro=$CodHemocentro
+        header("Location: admin-viewacc.php?id=" . $result['id']); */
 ?>

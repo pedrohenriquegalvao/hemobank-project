@@ -75,14 +75,13 @@ $result = $conexao->query($sql);
                 <i class="fa-solid fa-phone"></i>
                 <span>Telefone: </span><p><?php echo $user_data['Telefone'] ?></p>
             </div>
-            <button class="card-btn">Saiba Mais</button>
             <?php 
-            echo "<button class='card-btn edit-btn'>
-                    <a href='edit.php?CodHemocentro=$user_data[CodHemocentro]'>
-                        <i class='fa-solid fa-pen-to-square edit-icon'></i>
-                        Editar Hemocentro
+            echo "<button class='card-btn saiba-mais-btn'>
+                    <a href='hemocentro.php?CodHemocentro=$user_data[CodHemocentro]'>
+                        Saiba Mais
                     </a>
                 </button>";
+                
             echo "<button class='card-btn delete-btn' onclick='alerta(".$user_data['CodHemocentro'].")'>
                     <a>
                         <i class='fa-solid fa-trash delete-icon'></i>
@@ -113,24 +112,6 @@ $result = $conexao->query($sql);
 </body>
 </html>
 <script>
-    /*function alerta(CodHemocentro) {
-        window.alert('apertei ' + CodHemocentro)
-        var btn_delete = document.querySelector('.delete-btn');
-        var btn_cancel = document.querySelector('.delete-hemo-btn1');
-        var btn_confirm = document.querySelector('.delete-hemo-btn2');
-        var pop_up_box = document.querySelector('.container-delete-hemo-popup');
-        btn_delete.addEventListener('click', function() {
-            pop_up_box.style.display = 'block';
-        });
-        btn_cancel.addEventListener('click', function(){
-            pop_up_box.style.display = 'none';
-        });
-        btn_confirm.addEventListener('click', function(){
-            pop_up_box.style.display = 'none';
-            window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
-        });
-    }*/
-
     var codPendente = -1;
 
     var btn_delete = document.querySelector('.delete-btn');
@@ -153,8 +134,7 @@ $result = $conexao->query($sql);
     {
         codPendente = CodHemocentro;
         pop_up_box.style.display = 'block';
-        
-        
+         
     }
     </script>
    

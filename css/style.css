@@ -27,6 +27,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+ 
 }
 
 /* ~-~-~-~-~- NAVBAR ~-~-~-~-~- */
@@ -600,6 +601,7 @@ i.fa-solid.fa-trash.delete-icon
 {
     margin-right: 10px;
 }
+
 
 /* -~-~-~-~-~-~-~-~-~-~ ALERTA DE DELETE -~-~-~-~-~-~-~-~-~-~ */
 .container-delete-hemo-popup

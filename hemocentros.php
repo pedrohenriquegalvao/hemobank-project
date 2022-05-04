@@ -130,22 +130,31 @@ $result = $conexao->query($sql);
             window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
         });
     }*/
-    function alerta(CodHemocentro) {
-        var btn_delete = document.querySelector('.delete-btn');
-        var btn_cancel = document.querySelector('.delete-hemo-btn1');
-        var btn_confirm = document.querySelector('.delete-hemo-btn2');
-        var pop_up_box = document.querySelector('.container-delete-hemo-popup');
+
+    var codPendente = -1;
+
+    var btn_delete = document.querySelector('.delete-btn');
+    var btn_cancel = document.querySelector('.delete-hemo-btn1');
+    var btn_confirm = document.querySelector('.delete-hemo-btn2');
+    var pop_up_box = document.querySelector('.container-delete-hemo-popup');
+
+    btn_cancel.addEventListener('click', function(){
+        pop_up_box.style.display = 'none';
+        //document.location.reload(true);
+    });
+    btn_confirm.addEventListener('click', function(){
+        pop_up_box.style.display = 'none';
+        window.location.href='/hemobank-project/delete.php?CodHemocentro=' + codPendente;
+    });
+
         
+    
+    function alerta(CodHemocentro) 
+    {
+        codPendente = CodHemocentro;
         pop_up_box.style.display = 'block';
         
-        btn_cancel.addEventListener('click', function(){
-            pop_up_box.style.display = 'none';
-            document.location.reload(true);
-        });
-        btn_confirm.addEventListener('click', function(){
-            pop_up_box.style.display = 'none';
-            window.location.href='/hemobank-project/delete.php?CodHemocentro=' + CodHemocentro;
-        });
+        
     }
     </script>
    

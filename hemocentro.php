@@ -129,10 +129,37 @@ if(!empty($_GET['CodHemocentro'])) {
         </section>
 
         <section>
-
             <div class="update-estoque-container">
                 <button class="update-estoque">Atualizar Estoque</button>
             </div>
+
+            <?php 
+                $sql2 = "SELECT * FROM Estoque_Sangue_Total WHERE Cod_Hemocentro=$CodHemocentro";
+                $result2 = $conexao->query($sql2);
+                if($result2->num_rows > 0) { 
+                    echo 'HEMOCENTRO: ' . $CodHemocentro;
+                    echo '<br>';
+                    while($estoque_data = mysqli_fetch_assoc($result2)) { 
+                        $Cod_Estoque_Sang = $estoque_data['Cod_Estoque_Sangue'];
+                        $Cod_Tipo_Sang = $estoque_data['Cod_Tipo_Sang'];
+                        $Status = $estoque_data['Status'];
+                        $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
+                        
+                        echo 'Codigo do estoque: ' . $Cod_Estoque_Sang;
+                        echo '<br>';
+                        echo 'Codigo do Tipo Sanguíneo: ' . $Cod_Tipo_Sang;
+                        echo '<br>';
+                        echo 'Status do estoque: ' . $Status;
+                        echo '<br>';
+                        echo 'Horário de atualização: ' . $Data_Horario_Att;
+                        echo '<br>';
+                        echo '<br>';
+                    }
+                   
+
+                } 
+
+            ?>
 
             <div class="estoque-container">
                 <div class="estoque-content">
@@ -140,11 +167,11 @@ if(!empty($_GET['CodHemocentro'])) {
                     <div class="situacao-estoque-container">
                         <div class="Title-estoque">
                             <h1>Situação Estoque</h1>
-                            <p>Atualizado em 01/05/2022 as 00:14h</p>
+                            <p>Atualizado em <?php echo $Data_Horario_Att?>h</p>
                         </div>
                         <div class="cards-sang-estoque">
                             <div class="sang-card">
-                                <div class="water"></div>
+                                <div class="water" id="sangue_a_positivo" ></div>
                                 <p class="text-estoque">Tipo A+</p>
                             </div>
                             <div class="sang-card">
@@ -288,3 +315,15 @@ if(!empty($_GET['CodHemocentro'])) {
 </body>
 
 </html>
+
+<script>
+    var sangue_a_positivo = document.querySelector('#sangue_a_positivo');
+    sangue_a_positivo.classList.add("estavel");
+
+    //alert("a")
+    if ($Cod_Estoque_Sang == 1 && $Cod_Tipo_Sang == 1 && $Status == 'Estável') {
+        alert($Cod_Tipo_Sang);
+        sangue_a_positivo.classList.add("estavel");
+    }
+
+</script>

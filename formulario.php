@@ -64,23 +64,25 @@
     }
 
     if ($_FILES['fotoHemo']['size'] == 0) { // Não recebeu uma imagem binária
-        $result = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
-    VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', NULL)";
+        $sql = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
+        VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', NULL)";
+        $result = $conexao->query($sql);
     } else {                              // Recebeu uma imagem binária
         $fotoHemo = addslashes(file_get_contents($_FILES['fotoHemo']['tmp_name'])); // Prepara para salvar em BD
-        $result = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
-    VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', '$fotoHemo')";
+        $sql = "INSERT INTO hemocentro(Nome,Email,Telefone,Diretor,Cidade,Bairro,Rua,Numero,Mensagem,FotoHemo) 
+        VALUES ('$nomeHemo', '$emailHemo', '$telefoneHemo', '$diretorHemo', '$cidadeHemo', '$BairroHemo', '$ruaHemo', '$numeroHemo', '$mensagemCont', '$fotoHemo')";
+        $result = $conexao->query($sql);
     }
-   
     
-    if(mysqli_query($conexao, $result))
+
+    /*if(mysqli_query($conexao, $result))
     {
         echo '';
     }
     else
     {
         echo "erro".mysqli_connect_errno($conexao);
-    }
+    }*/
     
 
 ?>
@@ -103,9 +105,13 @@
 </body>
 
 <script>
-    setTimeout(function() 
+    /*setTimeout(function() 
     {
         window.location.href = "hemocentros.php";
+    }, 3000);*/
+    setTimeout(function() 
+    {
+        window.location.href = "criaEstoque.php";
     }, 3000);
 </script>
 

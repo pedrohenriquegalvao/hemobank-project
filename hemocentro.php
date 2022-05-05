@@ -130,30 +130,31 @@ if(!empty($_GET['CodHemocentro'])) {
 
         <section>
             <div class="update-estoque-container">
-                <button class="update-estoque">Atualizar Estoque</button>
+                <button class="update-estoque" onclick="location.href = 'updateEstoque.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Atualizar Estoque</button>
             </div>
 
             <?php 
                 $sql2 = "SELECT * FROM Estoque_Sangue_Total WHERE Cod_Hemocentro=$CodHemocentro";
                 $result2 = $conexao->query($sql2);
+                print_r($result2);
+                echo "<br>";
                 if($result2->num_rows > 0) { 
                     echo 'HEMOCENTRO: ' . $CodHemocentro;
-                    echo '<br>';
+                    echo '<br><br>';
                     while($estoque_data = mysqli_fetch_assoc($result2)) { 
                         $Cod_Estoque_Sang = $estoque_data['Cod_Estoque_Sangue'];
                         $Cod_Tipo_Sang = $estoque_data['Cod_Tipo_Sang'];
-                        $Status = $estoque_data['Status'];
+                        $Status_Estoque = $estoque_data['Status_Estoque'];
                         $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
                         
                         echo 'Codigo do estoque: ' . $Cod_Estoque_Sang;
                         echo '<br>';
                         echo 'Codigo do Tipo Sanguíneo: ' . $Cod_Tipo_Sang;
                         echo '<br>';
-                        echo 'Status do estoque: ' . $Status;
+                        echo 'Status do estoque: ' . $Status_Estoque;
                         echo '<br>';
                         echo 'Horário de atualização: ' . $Data_Horario_Att;
-                        echo '<br>';
-                        echo '<br>';
+                        echo '<br><br>';
                     }
                    
 
@@ -235,7 +236,7 @@ if(!empty($_GET['CodHemocentro'])) {
         <section>
 
             <div class="update-estoque-container hemocomponente">
-                <button class="update-estoque">Atualizar Estoque</button>
+                <button class="update-estoque" >Atualizar Estoque</button>
             </div>
 
             <div class="estoque-container">

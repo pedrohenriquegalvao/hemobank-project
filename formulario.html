@@ -119,9 +119,9 @@
                         <h2>Selecione uma foto</h2>
                         <div class="grid">
                           <div class="form-element">
-                            <input type="file" id="file-1" accept="image/*">
-                            <label for="file-1" id="file-1-preview">
-                              <img src="https://bit.ly/3ubuq5o" alt="">
+                            <input type="file" name="fotoHemo" id="fotoHemo" accept="image/*" required>
+                            <label for="fotoHemo" id="fotoHemo-preview">
+                              <img src="https://bit.ly/3ubuq5o" alt="" height="200px" width="200px">
                               <div>
                                 <span>+</span>
                               </div>
@@ -154,6 +154,6 @@
         });
     }
     
-    previewBeforeUpload("file-1");    
+    previewBeforeUpload("fotoHemo");    
 </script>
 </html>

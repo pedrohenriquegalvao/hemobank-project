@@ -8,7 +8,6 @@
         
         $result = $conexao->query($sql);
         
-        echo "<br>";
         /*if($result->num_rows > 0) { 
             echo 'HEMOCENTRO: ' . $CodHemocentro;
             echo '<br><br>';
@@ -91,14 +90,27 @@
 
             <div class="container-form">
                 <h1>Estoque de Sangue</h2>
+                </select>
                 <form action="saveUpdateEstoque.php" method="POST">
                     <?php 
                     while($estoque_data = mysqli_fetch_assoc($result)) { 
                         $Cod_Estoque_Sang = $estoque_data['Cod_Estoque_Sangue'];
                         $Cod_Tipo_Sang = $estoque_data['Cod_Tipo_Sang'];
+                        $Nome_Sang = "Padrão";
+                        switch ($Cod_Tipo_Sang) {
+                            case 1: $Nome_Sang = 'A+'; break;
+                            case 2: $Nome_Sang = 'A-'; break;
+                            case 3: $Nome_Sang = 'B+'; break;
+                            case 4: $Nome_Sang = 'B-'; break;
+                            case 5: $Nome_Sang = 'O+'; break;
+                            case 6: $Nome_Sang = 'O-'; break;
+                            case 7: $Nome_Sang = 'AB+'; break;
+                            case 8: $Nome_Sang = 'AB-'; break;
+                        }
                         $Status_Estoque = $estoque_data['Status_Estoque'];
                         $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
-                        echo "<h2>Sangue Tal</h2>";
+
+                        echo "<h2>Sangue $Nome_Sang</h2>";
                         echo "<label for=''>Status</label>
                                 <select name='status' id='" . $Cod_Tipo_Sang . "'> 
                                     <option value=''>--- Escolha uma Opção ---</option>
@@ -114,24 +126,14 @@
                                 echo 'Horário de atualização: ' . $Data_Horario_Att;
                                 echo '<br><br>';
                     }?>
-                    <h2>Sangue A+</h2>
-                    <label for="">Status</label>
-                    <select name="status" id="sangueAPositivo">
-                        <option value="">--- Escolha uma Opção ---</option>
-                        <option value="critico" <?php echo ($Status_Estoque == 'Crítico') ? 'selected' : '' ?>>Crítico</option>
-                        <option value="alerta" <?php echo ($Status_Estoque == 'Alerta') ? 'selected' : '' ?>>Alerta</option>
-                        <option value="estavel" <?php echo ($Status_Estoque == 'Estável') ? 'selected' : '' ?>>Estável</option>
-                    </select>
-
                     
-
-                   
+                    <div class="update-estoque-container">
+                        <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro ?>">
+                        <button type="submit" name="updateEstoque" id="updateEstoque" class="update-estoque" >Atualizar Estoque</button>
+                    </div>
                 </form>
             </div>
-            <div class="update-estoque-container">
-                <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro ?>">
-                <button type="submit" name="updateEstoque" id="updateEstoque" class="update-estoque" >Atualizar Estoque</button>
-            </div>
+            
         </section>
 
     </div>

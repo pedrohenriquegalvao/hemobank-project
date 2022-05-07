@@ -33,6 +33,8 @@
         }
         
     }
+    $sqlInsertEstoqueHemocomponentes = "INSERT INTO Estoque_Hemocomponentes(Cod_Hemocentro,Hemocomponente,Status_Estoque,Data_Horario_Att) VALUES ('$CodHemocentro', 'Concentrado de hemácias', 'Estável', CURRENT_TIMESTAMP), ('$CodHemocentro', 'Plasma fresco congelado', 'Estável', CURRENT_TIMESTAMP), ('$CodHemocentro', 'Concentrado de plaquetas', 'Estável', CURRENT_TIMESTAMP), ('$CodHemocentro', 'Crioprecipitado', 'Estável', CURRENT_TIMESTAMP) ";
+    $resultInsertEstoqHemocomp = $conexao->query($sqlInsertEstoqueHemocomponentes) or die("erro");
 
     header("Location: hemocentros.php");
 

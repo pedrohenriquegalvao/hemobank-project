@@ -20,6 +20,7 @@
                 $ruaHemo = $user_data['Rua'];
                 $numeroHemo =$user_data['Numero'];
                 $mensagemCont = $user_data['Mensagem'];
+                $fotoHemo = $user_data['FotoHemo'];
             }
         } else {
             header('Location: hemocentros.php');
@@ -98,16 +99,17 @@
                     </div>
 
                     <div class="message-box">
-                        <textarea name="mensagemCont" id="mensagemCont" placeholder="Descrição Hemocentro" maxlength="1000" title="A Mensagem deve possuir no máximo 1000 caracteres."></textarea>
+                        <textarea name="mensagemCont" id="mensagemCont" placeholder="Descrição Hemocentro" maxlength="1000" title="A Mensagem deve possuir no máximo 1000 caracteres."><?php echo $mensagemCont ?></textarea>
                     </div>
 
                     <div class="form">
                         <h2>Selecione uma foto</h2>
                         <div class="grid">
                           <div class="form-element">
-                            <input type="file" name="fotoHemo" id="fotoHemo" accept="image/*" required>
+                            <input type="file" name="fotoHemo" id="fotoHemo" accept="image/*" >
                             <label for="fotoHemo" id="fotoHemo-preview">
-                              <img src="https://bit.ly/3ubuq5o" alt="" height="200px" width="200px">
+                                <?php echo '<img src="data:image/png;base64,' . base64_encode($fotoHemo) . '" height="200px" width="200px"/>'; ?>
+                              <!--<img src="https://bit.ly/3ubuq5o" alt="" height="200px" width="200px"> -->
                               <div>
                                 <span>+</span>
                               </div>

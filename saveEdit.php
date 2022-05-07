@@ -12,7 +12,6 @@
         $ruaHemo = $_POST['ruaHemo'];
         $numeroHemo = $_POST['numeroHemo'];
         $mensagemCont = $_POST['mensagemCont'];
-        //$fotoHemo = NULL;
         switch ($_FILES['fotoHemo']['error']) {
             case UPLOAD_ERR_OK:
                 break;

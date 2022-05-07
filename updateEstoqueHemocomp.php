@@ -4,7 +4,7 @@
 
         $CodHemocentro = $_GET['CodHemocentro'];
 
-        $sql = "SELECT * FROM Estoque_Sangue_Total WHERE Cod_Hemocentro=$CodHemocentro";
+        $sql = "SELECT * FROM Estoque_Hemocomponentes WHERE Cod_Hemocentro=$CodHemocentro";
         
         $result = $conexao->query($sql);
 
@@ -70,43 +70,39 @@
             <div class="container-form">
                 <h1>Estoque de Sangue</h2>
                 </select>
-                <form action="saveUpdateEstoque.php" method="POST">
+                <form action="saveUpdateEstoqueHemocomp.php" method="POST">
                     <?php 
                     while($estoque_data = mysqli_fetch_assoc($result)) { 
-                        $Cod_Estoque_Sang = $estoque_data['Cod_Estoque_Sangue'];
-                        $Cod_Tipo_Sang = $estoque_data['Cod_Tipo_Sang'];
-                        $Nome_Sang = "Padrão";
-                        switch ($Cod_Tipo_Sang) {
-                            case 1: $Nome_Sang = 'A+'; break;
-                            case 2: $Nome_Sang = 'A-'; break;
-                            case 3: $Nome_Sang = 'B+'; break;
-                            case 4: $Nome_Sang = 'B-'; break;
-                            case 5: $Nome_Sang = 'O+'; break;
-                            case 6: $Nome_Sang = 'O-'; break;
-                            case 7: $Nome_Sang = 'AB+'; break;
-                            case 8: $Nome_Sang = 'AB-'; break;
+                        $Cod_Estoque_Hemocomp = $estoque_data['Cod_Estoque_Hemo'];
+                        $Hemocomponente = $estoque_data['Hemocomponente'];
+                        $Cod_Hemocomponente = "999";
+                        switch ($Hemocomponente) {
+                            case 'Concentrado de hemácias': $Cod_Hemocomponente = '1'; break;
+                            case 'Plasma fresco congelado': $Cod_Hemocomponente = '2'; break;
+                            case 'Concentrado de plaquetas': $Cod_Hemocomponente = '3'; break;
+                            case 'Crioprecipitado': $Cod_Hemocomponente = '4'; break;
                         }
                         $Status_Estoque = $estoque_data['Status_Estoque'];
                         $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
-
-                        echo "<h2>Sangue $Nome_Sang</h2>";
+                        
+                        echo "<h2>Hemocomponente: $Hemocomponente</h2>";
                         echo "<label for=''>Status</label>
-                                <select name='status".strval($Cod_Tipo_Sang)."' id='" . $Cod_Tipo_Sang . "'> 
+                                <select name='status". $Cod_Hemocomponente ."' id='" . $Cod_Hemocomponente . "'> 
                                     <option value='' disabled>--- Escolha uma Opção ---</option>
                                     <option value='Crítico' " . (($Status_Estoque == 'Crítico') ? 'selected' : '') . " >Crítico</option>
                                     <option value='Alerta' " . (($Status_Estoque == 'Alerta') ? 'selected' : '') . " >Alerta</option>
                                     <option value='Estável' " . (($Status_Estoque == 'Estável') ? 'selected' : '') . " >Estável</option>
                                 </select>";
                                 echo '<br>';
-                                echo 'Codigo do Estoque: ' . $Cod_Estoque_Sang;
+                                echo 'Codigo do Estoque: ' . $Cod_Estoque_Hemocomp;
                                 echo '<br>';
-                                echo 'Codigo do Tipo Sanguíneo: ' . $Cod_Tipo_Sang;
+                                echo 'Hemocomponente: ' . $Hemocomponente;
                                 echo '<br>';
                                 echo 'Status do estoque: ' . $Status_Estoque;
                                 echo '<br>';
                                 echo 'Horário de atualização: ' . $Data_Horario_Att;
                                 echo '<br><br>';
-                                echo ' <input type="hidden" name="estoque'.$Cod_Tipo_Sang.'" value="'.$Cod_Estoque_Sang.'">';
+                                echo ' <input type="hidden" name="estoque'.$Cod_Hemocomponente.'" value="'.$Cod_Estoque_Hemocomp.'">';
                     }?>
                     
                     <div class="update-estoque-container">

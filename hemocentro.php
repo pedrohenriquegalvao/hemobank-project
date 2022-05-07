@@ -216,35 +216,58 @@ if(!empty($_GET['CodHemocentro'])) {
         <section>
 
             <div class="update-estoque-container hemocomponente">
-                <button class="update-estoque" >Atualizar Estoque</button>
+                <button class="update-estoque" onclick="location.href = 'updateEstoqueHemocomp.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Atualizar Estoque</button>
             </div>
 
             <div class="estoque-container">
                 <div class="estoque-content hemocomponente">
         
                     <div class="situacao-estoque-container hemocomponente">
+                        <?php 
+                        $sqlData_Horario = "SELECT Data_Horario_Att FROM Estoque_Hemocomponentes WHERE Cod_Hemocentro=$CodHemocentro AND Hemocomponente='Concentrado de hemácias'" ;
+                        $resultData_Horario = $conexao->query($sqlData_Horario);
+                        $Data_Horario_Att = mysqli_fetch_row($resultData_Horario);
+                        ?>
                         <div class="Title-estoque">
                             <h1>Situação Estoque</h1>
-                            <p>Atualizado em 01/05/2022 as 00:14h</p>
+                            <p>Atualizado em <?php foreach ($Data_Horario_Att as $data_horario) { echo $data_horario;} ?>h</p>
                         </div>
                         <div class="cards-sang-estoque">
-                            <div class="sang-card">
-                                <div class="water hemocomponente"></div>
-                                <p class="text-estoque">CH</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water hemocomponente"></div>
-                                <p class="text-estoque">PFC</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water hemocomponente"></div>
-                                <p class="text-estoque">CP</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water hemocomponente"></div>
-                                <p class="text-estoque">CRIO</p>
-                            </div>
+                        <?php 
+                $sql2 = "SELECT * FROM Estoque_Hemocomponentes WHERE Cod_Hemocentro=$CodHemocentro";
+                $result2 = $conexao->query($sql2);
+                
+                
+                if($result2->num_rows > 0) { 
+                    
+                    while($estoque_data = mysqli_fetch_assoc($result2)) { 
+                        $Cod_Estoque_Hemocomp = $estoque_data['Cod_Estoque_Hemo'];
+                        $Hemocomponente = $estoque_data['Hemocomponente'];
+                        $Sigla_Hemocomponente = "AAA";
+                        switch ($Hemocomponente) {
+                            case 'Concentrado de hemácias': $Sigla_Hemocomponente = 'CH'; break;
+                            case 'Plasma fresco congelado': $Sigla_Hemocomponente = 'PFC'; break;
+                            case 'Concentrado de plaquetas': $Sigla_Hemocomponente = 'CP'; break;
+                            case 'Crioprecipitado': $Sigla_Hemocomponente = 'CRIO'; break;
+                        }
+                        $Status_Estoque = $estoque_data['Status_Estoque'];
+                        $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
+                        
+        
+                        echo '<div class="sang-card">
+                                <div class="water hemocomponente '. 
+                                (($Status_Estoque == 'Crítico') ? 'critico' : 
+                                (($Status_Estoque == 'Alerta') ? 'alerta' : 'estavel')) .'">
+                                </div>
+                                <p class="text-estoque">'. $Sigla_Hemocomponente .'</p>
+                             </div>';
+                        
+                    }
+                   
 
+                } 
+
+            ?>
                             <div class="descri-hemocomponentes">
                                 <div class="descri-card">
                                     <p>CH = Concentrado de hemácias</p>

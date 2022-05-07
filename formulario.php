@@ -49,7 +49,7 @@
     $BairroHemo = $_POST['BairroHemo'];
     $ruaHemo = $_POST['ruaHemo'];
     $numeroHemo = $_POST['numeroHemo'];
-    $mensagemCont = $_POST['mensagemCont'];
+    $mensagemCont = htmlspecialchars($_POST['mensagemCont']);
      
     switch ($_FILES['fotoHemo']['error']) {
         case UPLOAD_ERR_OK:

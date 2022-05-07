@@ -132,79 +132,57 @@ if(!empty($_GET['CodHemocentro'])) {
             <div class="update-estoque-container">
                 <button class="update-estoque" onclick="location.href = 'updateEstoque.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Atualizar Estoque</button>
             </div>
-
+            <div class="estoque-container">
+                <div class="estoque-content">   
+                    <div class="situacao-estoque-container">
+                        <?php 
+                        $sqlData_Horario = "SELECT Data_Horario_Att FROM Estoque_Sangue_Total WHERE Cod_Hemocentro=$CodHemocentro AND Cod_Tipo_Sang='1'" ;
+                        $resultData_Horario = $conexao->query($sqlData_Horario);
+                        $Data_Horario_Att = mysqli_fetch_row($resultData_Horario);
+                        ?>
+                        <div class="Title-estoque">
+                                <h1>Situação Estoque</h1>
+                                <p>Atualizado em <?php foreach ($Data_Horario_Att as $data_horario) { echo $data_horario;} ?>h</p>
+                        </div>
+                        <div class="cards-sang-estoque">
             <?php 
                 $sql2 = "SELECT * FROM Estoque_Sangue_Total WHERE Cod_Hemocentro=$CodHemocentro";
                 $result2 = $conexao->query($sql2);
-                print_r($result2);
-                echo "<br>";
+                
                 
                 if($result2->num_rows > 0) { 
-                    echo 'HEMOCENTRO: ' . $CodHemocentro;
-                    echo '<br><br>';
+                    
                     while($estoque_data = mysqli_fetch_assoc($result2)) { 
                         $Cod_Estoque_Sang = $estoque_data['Cod_Estoque_Sangue'];
                         $Cod_Tipo_Sang = $estoque_data['Cod_Tipo_Sang'];
+                        switch ($Cod_Tipo_Sang) {
+                            case 1: $Nome_Sang = 'A+'; break;
+                            case 2: $Nome_Sang = 'A-'; break;
+                            case 3: $Nome_Sang = 'B+'; break;
+                            case 4: $Nome_Sang = 'B-'; break;
+                            case 5: $Nome_Sang = 'O+'; break;
+                            case 6: $Nome_Sang = 'O-'; break;
+                            case 7: $Nome_Sang = 'AB+'; break;
+                            case 8: $Nome_Sang = 'AB-'; break;
+                        }
                         $Status_Estoque = $estoque_data['Status_Estoque'];
                         $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
                         
-                        echo 'Codigo do estoque: ' . $Cod_Estoque_Sang;
-                        echo '<br>';
-                        echo 'Codigo do Tipo Sanguíneo: ' . $Cod_Tipo_Sang;
-                        echo '<br>';
-                        echo 'Status do estoque: ' . $Status_Estoque;
-                        echo '<br>';
-                        echo 'Horário de atualização: ' . $Data_Horario_Att;
-                        echo '<br><br>';
-
+        
+                        echo '<div class="sang-card">
+                                <div class="water '. 
+                                (($Status_Estoque == 'Crítico') ? 'critico' : 
+                                (($Status_Estoque == 'Alerta') ? 'alerta' : 'estavel')) .'">
+                                </div>
+                                <p class="text-estoque">Tipo '. $Nome_Sang .'</p>
+                             </div>';
+                        
                     }
                    
 
                 } 
 
             ?>
-
-            <div class="estoque-container">
-                <div class="estoque-content">
-        
-                    <div class="situacao-estoque-container">
-                        <div class="Title-estoque">
-                            <h1>Situação Estoque</h1>
-                            <p>Atualizado em <?php echo $Data_Horario_Att?>h</p>
-                        </div>
-                        <div class="cards-sang-estoque">
-                            <div class="sang-card">
-                                <div class="water" id="sangue_a_positivo" ></div>
-                                <p class="text-estoque">Tipo A+</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo A-</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo B+</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo B-</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo O+</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo O-</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo AB+</p>
-                            </div>
-                            <div class="sang-card">
-                                <div class="water"></div>
-                                <p class="text-estoque">Tipo AB-</p>
-                            </div>
                         </div>
                     </div>
         
@@ -318,15 +296,3 @@ if(!empty($_GET['CodHemocentro'])) {
 </body>
 
 </html>
-
-<script>
-    var sangue_a_positivo = document.querySelector('#sangue_a_positivo');
-    sangue_a_positivo.classList.add("estavel");
-
-    //alert("a")
-    if ($Cod_Estoque_Sang == 1 && $Cod_Tipo_Sang == 1 && $Status == 'Estável') {
-        alert($Cod_Tipo_Sang);
-        sangue_a_positivo.classList.add("estavel");
-    }
-
-</script>

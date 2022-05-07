@@ -280,7 +280,7 @@ nav .menu-btn
     position: relative;
 }
 
-.HemocentroCadastro-content .message-box input
+.HemocentroCadastro-content .message-box textarea
 {
     position: absolute;
     height: 100%;
@@ -294,13 +294,13 @@ nav .menu-btn
     transition: all 0.3s ease;
 }
 
-.HemocentroCadastro-content .message-box input:focus
+.HemocentroCadastro-content .message-box textarea:focus
 {
     border-color: var(--Cor-4);
     background-color: #fff;
 }
 
-.HemocentroCadastro-content .message-box input::placeholder
+.HemocentroCadastro-content .message-box textarea::placeholder
 {
     font-size: 16px;
     padding-left: 5px;

@@ -112,12 +112,14 @@
 
                         echo "<h2>Sangue $Nome_Sang</h2>";
                         echo "<label for=''>Status</label>
-                                <select name='status' id='" . $Cod_Tipo_Sang . "'> 
+                                <select name='status".strval($Cod_Tipo_Sang)."' id='" . $Cod_Tipo_Sang . "'> 
                                     <option value=''>--- Escolha uma Opção ---</option>
-                                    <option value='critico' " . (($Status_Estoque == 'Crítico') ? 'selected' : '') . " >Crítico</option>
-                                    <option value='alerta' " . (($Status_Estoque == 'Alerta') ? 'selected' : '') . " >Alerta</option>
-                                    <option value='estavel' " . (($Status_Estoque == 'Estável') ? 'selected' : '') . " >Estável</option>
+                                    <option value='Crítico' " . (($Status_Estoque == 'Crítico') ? 'selected' : '') . " >Crítico</option>
+                                    <option value='Alerta' " . (($Status_Estoque == 'Alerta') ? 'selected' : '') . " >Alerta</option>
+                                    <option value='Estável' " . (($Status_Estoque == 'Estável') ? 'selected' : '') . " >Estável</option>
                                 </select>";
+                                echo '<br>';
+                                echo 'Codigo do Estoque: ' . $Cod_Estoque_Sang;
                                 echo '<br>';
                                 echo 'Codigo do Tipo Sanguíneo: ' . $Cod_Tipo_Sang;
                                 echo '<br>';
@@ -125,6 +127,7 @@
                                 echo '<br>';
                                 echo 'Horário de atualização: ' . $Data_Horario_Att;
                                 echo '<br><br>';
+                                echo ' <input type="hidden" name="estoque'.$Cod_Tipo_Sang.'" value="'.$Cod_Estoque_Sang.'">';
                     }?>
                     
                     <div class="update-estoque-container">

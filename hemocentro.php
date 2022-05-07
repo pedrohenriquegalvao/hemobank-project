@@ -138,6 +138,7 @@ if(!empty($_GET['CodHemocentro'])) {
                 $result2 = $conexao->query($sql2);
                 print_r($result2);
                 echo "<br>";
+                
                 if($result2->num_rows > 0) { 
                     echo 'HEMOCENTRO: ' . $CodHemocentro;
                     echo '<br><br>';
@@ -155,6 +156,7 @@ if(!empty($_GET['CodHemocentro'])) {
                         echo '<br>';
                         echo 'Horário de atualização: ' . $Data_Horario_Att;
                         echo '<br><br>';
+
                     }
                    
 

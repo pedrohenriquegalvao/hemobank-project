@@ -31,6 +31,7 @@
             $sqlUpdate = "UPDATE Hemocentro SET Nome='$nomeHemo',Email='$emailHemo',Telefone='$telefoneHemo',Diretor='$diretorHemo',Cidade='$cidadeHemo',Bairro='$BairroHemo',Rua='$ruaHemo',Numero='$numeroHemo',Mensagem='$mensagemCont',FotoHemo='$fotoHemo' WHERE CodHemocentro='$CodHemocentro'";
         }
         $result = $conexao->query($sqlUpdate);
+        
         } 
     header("Location: hemocentro.php?CodHemocentro=" . $CodHemocentro);
         /*header('Location: hemocentro.php');

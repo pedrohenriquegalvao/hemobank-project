@@ -98,15 +98,22 @@
                     </div>
 
                     <div class="message-box">
-                        <input type="text" placeholder="Descrição Hemocentro" pattern="[a-zA-Z\u00C0-\u00FF ]{0,300}$" name="mensagemCont" id="mensagemCont" value="<?php echo $mensagemCont?>">
+                        <textarea name="mensagemCont" id="mensagemCont" placeholder="Descrição Hemocentro" maxlength="1000" title="A Mensagem deve possuir no máximo 1000 caracteres."></textarea>
                     </div>
 
-                    <div class="input-file">
-                        <label class="label-hemo" for="fotoHemo" id="label-hemo">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <span>Escolha o arquivo</span>
-                        </label>
-                        <input type="file" required id="fotoHemo" name="fotoHemo">
+                    <div class="form">
+                        <h2>Selecione uma foto</h2>
+                        <div class="grid">
+                          <div class="form-element">
+                            <input type="file" name="fotoHemo" id="fotoHemo" accept="image/*" required>
+                            <label for="fotoHemo" id="fotoHemo-preview">
+                              <img src="https://bit.ly/3ubuq5o" alt="" height="200px" width="200px">
+                              <div>
+                                <span>+</span>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
                     </div>
 
                     <div class="input-box">
@@ -122,4 +129,20 @@
     <div id="popup-check">
     <a class="link-voltar-hemo" href="hemocentros.php">Voltar</a>
 </body>
+<script>
+    function previewBeforeUpload(id){
+        document.querySelector("#"+id).addEventListener("change",function(e){
+        if(e.target.files.length == 0){
+            return;
+        }
+        let file = e.target.files[0];
+        let url = URL.createObjectURL(file);
+        document.querySelector("#"+id+"-preview div").innerText = file.name;
+        document.querySelector("#"+id+"-preview img").src = url;
+        });
+    }
+    
+    previewBeforeUpload("fotoHemo");    
+</script>
 </html>
+

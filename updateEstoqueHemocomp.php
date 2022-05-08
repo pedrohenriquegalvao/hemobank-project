@@ -68,10 +68,11 @@
         <section>
 
             <div class="container-form">
-                <h1>Estoque de Sangue</h2>
+                <h1 class="h1-container-form">Estoque de Sangue</h2>
                 </select>
                 <form action="saveUpdateEstoqueHemocomp.php" method="POST">
                     <?php 
+                    echo "<div class='card-estoque-sang'>";
                     while($estoque_data = mysqli_fetch_assoc($result)) { 
                         $Cod_Estoque_Hemocomp = $estoque_data['Cod_Estoque_Hemo'];
                         $Hemocomponente = $estoque_data['Hemocomponente'];
@@ -85,8 +86,9 @@
                         $Status_Estoque = $estoque_data['Status_Estoque'];
                         $Data_Horario_Att = $estoque_data['Data_Horario_Att'];
                         
+                        echo "<div class='card-estoque-sangue'>";
                         echo "<h2>Hemocomponente: $Hemocomponente</h2>";
-                        echo "<label for=''>Status</label>
+                        echo "<label for=''><b>Status</b></label>
                                 <select name='status". $Cod_Hemocomponente ."' id='" . $Cod_Hemocomponente . "'> 
                                     <option value='' disabled>--- Escolha uma Opção ---</option>
                                     <option value='Crítico' " . (($Status_Estoque == 'Crítico') ? 'selected' : '') . " >Crítico</option>
@@ -94,15 +96,16 @@
                                     <option value='Estável' " . (($Status_Estoque == 'Estável') ? 'selected' : '') . " >Estável</option>
                                 </select>";
                                 echo '<br>';
-                                echo 'Codigo do Estoque: ' . $Cod_Estoque_Hemocomp;
+                                echo '<b>Codigo do Estoque:</b> ' . $Cod_Estoque_Hemocomp;
                                 echo '<br>';
-                                echo 'Hemocomponente: ' . $Hemocomponente;
+                                echo '<b>Hemocomponente:</b> ' . $Hemocomponente;
                                 echo '<br>';
-                                echo 'Status do estoque: ' . $Status_Estoque;
+                                echo '<b>Status do estoque:</b> ' . $Status_Estoque;
                                 echo '<br>';
-                                echo 'Horário de atualização: ' . $Data_Horario_Att;
+                                echo '<b>Horário de atualização:</b> ' . $Data_Horario_Att;
                                 echo '<br><br>';
                                 echo ' <input type="hidden" name="estoque'.$Cod_Hemocomponente.'" value="'.$Cod_Estoque_Hemocomp.'">';
+                                echo "</div>";
                     }?>
                     
                     <div class="update-estoque-container">

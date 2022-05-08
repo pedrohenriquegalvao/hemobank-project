@@ -1080,6 +1080,8 @@ button.update-estoque
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s ease;
+    /*transform: translateX(-10px);
+    margin-bottom: 30px;*/
 }
 
 button.update-estoque:hover
@@ -1101,7 +1103,36 @@ button.update-estoque:hover
     width: 230px;
 }
 
+/* ------------- Card do estoque do sangue ------------- */
+
+.card-estoque-sangue{
+    text-align: left;
+    background: #FFF;
+    width: 370px;
+    margin: 20px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card-estoque-sang{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-form{
+    margin-top: 25px;
+   
+}
+
+.h1-container-form{
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
+
 
 
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */

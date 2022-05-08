@@ -1054,14 +1054,15 @@ section.hemo-desc
     top: -377px;
 }
 
-.update-estoque-container 
+.estoque-container-form .update-estoque-container 
 {
     max-width: 800px;
     height: auto;
     background-color: #ffffff;
-    padding-left: 32px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .update-estoque-container.hemocomponente
@@ -1105,7 +1106,8 @@ button.update-estoque:hover
 
 /* ------------- Card do estoque do sangue ------------- */
 
-.card-estoque-sangue{
+.card-estoque-sangue
+{
     text-align: left;
     background: #FFF;
     width: 370px;
@@ -1114,22 +1116,75 @@ button.update-estoque:hover
     box-sizing: border-box;
     padding: 20px;
     border-radius: 5px;
+    text-align: center;
+    border-radius: 5px;
 }
 
-.card-estoque-sang{
+.select-estoque 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.select-estoque select
+{
+    height: 40px;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+}
+
+.select-estoque select:focus
+{
+    outline: none;
+}
+
+.select-estoque select optgroup
+{
+    color: var(--Cor-3);
+    border-radius: 5px;
+    border: 1px solid #c6c6c6;
+    margin: 8px;
+}
+
+.select-estoque select option:hover
+{
+    background-color: #1b2631;
+}
+
+.select-estoque select:optional
+{
+    padding-left: 10px;
+    color: var(--Cor-3);
+}
+
+.select-estoque label
+{
+    margin: 15px;
+}
+
+.card-estoque-sang 
+{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.container-form{
+.estoque-container-form
+{
     margin-top: 25px;
    
 }
 
-.h1-container-form{
+h1.estoque-title 
+{
+    text-align: center;
     margin-top: 1em;
-    margin-left: 1em;
+    color: var(--Cor-3);
+    font-weight: 300;
 }
+
+
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
@@ -1209,8 +1264,13 @@ button.update-estoque:hover
 
     .update-estoque-container 
     {
-        padding: 0px;
-        text-align: center;
+        text-align: center !important;
+        margin-top: 50px !important;
+    }
+
+    .card-estoque-sangue .hemo-title
+    {
+        font-size: 24px !important;
     }
 }
 

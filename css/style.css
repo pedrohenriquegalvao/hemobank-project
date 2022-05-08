@@ -1184,7 +1184,11 @@ h1.estoque-title
     font-weight: 300;
 }
 
-
+.update-estoque-container.pag-hemo
+{
+    text-align: center;
+    margin-top: 50px;
+}
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
@@ -1272,6 +1276,7 @@ h1.estoque-title
     {
         font-size: 24px !important;
     }
+
 }
 
 @media (max-width: 600px)

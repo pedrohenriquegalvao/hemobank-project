@@ -42,6 +42,7 @@ if(!empty($_GET['CodHemocentro'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hemocentro</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/65ea520fa5.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/93d18202e7.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -69,7 +70,6 @@ if(!empty($_GET['CodHemocentro'])) {
 
             <div class="menu">
                 <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
-                <div class="item"><a href="hemocentro.html"><i class="fa-solid fa-screwdriver-wrench"></i>Interface Tela Hemocentro</a></div>
                 <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
                 <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
 
@@ -129,7 +129,7 @@ if(!empty($_GET['CodHemocentro'])) {
         </section>
 
         <section>
-            <div class="update-estoque-container">
+            <div class="update-estoque-container pag-hemo">
                 <button class="update-estoque" onclick="location.href = 'updateEstoque.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Atualizar Estoque</button>
             </div>
             <div class="estoque-container">

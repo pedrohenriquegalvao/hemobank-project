@@ -78,7 +78,7 @@ if(!empty($_GET['CodHemocentro'])) {
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
                         <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
-                        <a href="#" class="sub-item">Cadastro Doador</a>
+                        <a href="formularioDoador.html" class="sub-item">Cadastro Doador</a>
                     </div>
                 </div>
                 

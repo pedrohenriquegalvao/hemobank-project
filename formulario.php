@@ -51,7 +51,8 @@
     $numeroHemo = $_POST['numeroHemo'];
     $mensagemCont = htmlspecialchars($_POST['mensagemCont']);
      
-    switch ($_FILES['fotoHemo']['error']) {
+    switch ($_FILES['fotoHemo']['error']) 
+    {
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:

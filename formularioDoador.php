@@ -14,7 +14,7 @@
 
     if(mysqli_query($conexao, $sql))
     {
-        echo "Usuário Cadastrado com sucesso!"
+        echo "Usuário Cadastrado com sucesso!";
     }
     else
     {

@@ -1678,7 +1678,7 @@ form.sign-in-form
   }
 }
 
-@media (max-height: 874px)
+@media (max-width: 450px)
 {
   .sign-up-form
   {

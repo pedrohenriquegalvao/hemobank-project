@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,100;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 :root
 {
@@ -1194,6 +1195,7 @@ h1.estoque-title
 
 .container-form-doador 
 {
+  font-family: "Poppins", sans-serif;
   position: relative;
   width: 100%;
   background-color: #fff;
@@ -1267,6 +1269,7 @@ form.sign-in-form
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .input-field-form-doador

@@ -41,40 +41,40 @@
 
 
 
-        <form action="formularioDoador.php" method="post" class="sign-up-form">
+        <form action="cadastroDoador.php" method="post" class="sign-up-form">
           <h2 class="title-form-doador cadastro">Cadastro</h2>
 
           <div class="input-field-form-doador">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nome" name="nomeDoador" />
+            <input type="text" placeholder="Nome" name="nomeDoador" pattern="[a-zA-Z\u00C0-\u00FF ]{6,100}$" required title="O nome deve possuir no máximo 100 caracteres!"/>
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-solid fa-barcode"></i>
-            <input type="text" placeholder="CPF" name="CPFDoador"/>
+            <input type="text" oninput="mascara(this)" placeholder="CPF" name="CPFDoador" required maxlength="14" title="O campo deve ser preenchido da seguinte maneira: 000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" />
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" name="emailDoador"/>
+            <input type="email" placeholder="Email" name="emailDoador" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="O email deve ser inserido da seguinte forma: exemplo@exemplo.com" required/>
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-solid fa-calendar"></i>
-            <input type="text" placeholder="Data de Nascimento" name="dataNascDoador"/>
+            <input type="text" placeholder="Data de Nascimento" pattern="\d{1,2}/\d{1,2}/\d{4}" name="dataNascDoador" maxlength="10" class="js-date" title="Deve possuir o seguinte formato: 00/00/0000"/>
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" name="senhaDoador"/>
+            <input type="password" placeholder="Senha" name="senhaDoador" id="senha" maxlength="32"/>
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Confirmar Senha" />
+            <input type="password" placeholder="Confirmar Senha" id="confirmSenha" maxlength="32"/>
           </div>
 
-          <input type="submit" class="Cadastrobtn" value="Cadastrar" />
+          <input type="submit" class="Cadastrobtn" value="Cadastrar"/>
 
         </form>
 
@@ -112,5 +112,86 @@
   <script src="js/formularioDoador.js"></script>
   
 </body>
+
+<script>
+
+  // MASCARA PARA O INPUT CPF
+
+  function mascara(i)
+  {
+    
+    var v = i.value;
+    
+    if(isNaN(v[v.length-1]))
+    {
+      // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+    }
+    
+    i.setAttribute("maxlength", "14");
+    if (v.length == 3 || v.length == 7) i.value += ".";
+    if (v.length == 11) i.value += "-";
+
+  }
+
+  // MASCARA DO INPUT DATA
+
+  var input = document.querySelectorAll('.js-date')[0];
+  
+  var dateInputMask = function dateInputMask(elm) 
+  {
+    elm.addEventListener('keypress', function(e) 
+    {
+      if(e.keyCode < 47 || e.keyCode > 57) 
+      {
+        e.preventDefault();
+      }
+      
+      var len = elm.value.length;
+      
+      // If we're at a particular place, let the user type the slash
+      // i.e., 12/12/1212
+      if(len !== 1 || len !== 3) 
+      {
+        if(e.keyCode == 47) 
+        {
+          e.preventDefault();
+        }
+      }
+      
+      // If they don't add the slash, do it for them...
+      if(len === 2) 
+      {
+        elm.value += '/';
+      }
+
+      // If they don't add the slash, do it for them...
+      if(len === 5) 
+      {
+        elm.value += '/';
+      }
+    });
+  };
+  
+  dateInputMask(input);
+
+  // VALIDAR CAMPO SENHA
+
+  var password = document.getElementById("senha");
+  var confirm_password = document.getElementById("confirmSenha");
+
+  function validatePassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("As senhas não estão iguais!");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+
+</script>
 
 </html>

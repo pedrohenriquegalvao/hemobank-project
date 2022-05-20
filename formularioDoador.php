@@ -22,20 +22,20 @@
     <div class="forms-container">
       <div class="signin-signup">
 
-        <form action="#" class="sign-in-form">
+        <form action="loginDoador.php" method="POST" class="sign-in-form">
           <h2 class="title-form-doador">Login</h2>
 
           <div class="input-field-form-doador">
             <i class="fas fa-solid fa-barcode"></i>
-            <input type="text" placeholder="CPF" />
+            <input type="text" oninput="mascara(this)" placeholder="CPF" name="cpf" required maxlength="14" title="O campo deve ser preenchido da seguinte maneira: 000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" />
           </div>
 
           <div class="input-field-form-doador">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" />
+            <input type="password" name="senha" placeholder="Senha" />
           </div>
 
-          <input type="submit" value="Login" class="Cadastrobtn solid" />
+          <input type="submit" name="submit" value="Login" class="Cadastrobtn solid" />
           
         </form>
 

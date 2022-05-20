@@ -28,8 +28,6 @@ if(!empty($_GET['CodHemocentro'])) {
         }
     }
     
-    
-    
 }
 ?>
 

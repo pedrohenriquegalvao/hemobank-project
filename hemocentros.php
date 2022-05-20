@@ -1,10 +1,9 @@
 <?php
+    include_once("config.php");
 
-include_once("config.php");
+    $sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
 
-$sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
-
-$result = $conexao->query($sql);
+    $result = $conexao->query($sql);
 
 ?>
 
@@ -51,7 +50,7 @@ $result = $conexao->query($sql);
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
                         <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
-                        <a href="formularioDoador.html" class="sub-item">Cadastro Doador</a>
+                        <a href="formularioDoador.php" class="sub-item">Cadastro Doador</a>
                     </div>
                 </div>
                 

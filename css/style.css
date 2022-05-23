@@ -1702,9 +1702,93 @@ form.sign-in-form
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DE LOGIN E CADASTRO DO DOADOR -=-=-=-=-=-=-=-=-=-= */
 
+/* -~-~-~-~-~-~-~-~-~-~ FORMULÁRIO DE AGENDAMENTO DA DOAÇÃO -~-~-~-~-~-~-~-~-~-~ */
+
+.titleFormDoacao
+{
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: var(--Cor-3);
+    text-align: center;
+}
+
+.formdoacao-container
+{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.form-check-input
+{
+    margin: 3px 10px 0px 0px !important;
+}
+
+.form-check-input:checked 
+{
+    background-color: var(--Cor-3) !important;
+    border-color: var(--Cor-3) !important;
+}
+
+.perguntaFormDoacao
+{
+    margin: 20px;
+}
+
+.perguntaFormDoacao p
+{
+    font-size: 18px;
+}
+
+.formDoacao-btn 
+{
+    border: none;
+    text-align: center;
+    background: var(--Cor-3);
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.formDoacao-btn:hover
+{
+    background-color: #580202;
+}
+
+.perguntaFormDoacao input[type='text']
+{
+    width: 250px;
+    height: 45px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 2px solid #CCC;
+    outline: none;
+    transition: 0.5s ease-in-out;
+}
+
+.perguntaFormDoacao input[type='text']:focus
+{
+    border: 2px solid var(--Cor-3);
+}
+
+
+
+
+
+
+
+
+
+
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
-
-
 
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */
 @media (max-width:1000px) 

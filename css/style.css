@@ -1779,7 +1779,32 @@ form.sign-in-form
     border: 2px solid var(--Cor-3);
 }
 
+.btn-formDoacao
+{
+    width: 100%;
+    border: none;
+    background: #24E384;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
 
+.btn-formDoacao:hover
+{
+  background-color: #157F4A;
+  color: white;
+}
+
+.btn-formDoacao.invalido
+{
+  background-color: #D74343;
+}
+
+.btn-formDoacao.invalido:hover
+{
+  background-color: #a13333;
+}
 
 
 

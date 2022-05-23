@@ -18,7 +18,7 @@
 <body>
 
     <div class="formdoacao-container">
-        <form action="">
+        <form>
 
             <h1 class="titleFormDoacao">Formulário de Doação</h1>
 
@@ -179,7 +179,7 @@
             </div>
 
             <div class="perguntaFormDoacao">
-                <input type="text" name="peso" id="pesoDoador" placeholder="Qual o seu peso?">
+                <input type="text" name="peso" id="pesoDoador" placeholder="Qual o seu peso?" required pattern = "[0-9]+" title="O campo não pode estar em branco! | Só é aceito apenas número!">
             </div>
 
             <button class="formDoacao-btn" onclick="validacaoForm()">Enviar Formulário</button>
@@ -189,18 +189,29 @@
 
     <!-- POP UP ALERTA DELETAR -->
     
-    <div class="container-delete-hemo-popup">
+    <div class="container-delete-hemo-popup sucess-form-doacao">
 
         <div class="delete-hemo-popup-box">
-          <i class="fas fa-exclamation"></i>
+          <img src="img/ok-animate.svg" alt="">
           <h1>Parabéns!</h1>
           <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
           <div class="delete-hemo-btns">
-            <a href="#" class="delete-hemo-btn1">Cancelar</a>
-            <a href="#" class="delete-hemo-btn2">Deletar Hemocentro</a>
+            <button onclick="window.location.href='#'" class="btn-formDoacao">Ok</button>
           </div>
         </div>
 
+    </div>
+
+    <div class="container-delete-hemo-popup unsucess-form-doacao">
+
+        <div class="delete-hemo-popup-box">
+          <img src="img/no-data-animate.svg" alt="">
+          <h1>Inválido!</h1>
+          <label>Infelizmente você não possui todos os atributos necessários para seguir com o agendamento da doação!</label>
+          <div class="delete-hemo-btns">
+            <button onclick="window.location.href='#'" class="btn-formDoacao invalido">Ok</button>
+          </div>
+        </div>
     </div>
 
 </body>

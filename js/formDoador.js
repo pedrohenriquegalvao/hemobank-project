@@ -15,12 +15,15 @@ function validacaoForm()
    droga = document.querySelector('input[name="droga"]:checked').value;
    peso = document.getElementById('pesoDoador').value;
 
+   sucessPopUp = document.querySelector('.container-delete-hemo-popup.sucess-form-doacao');
+   unsucessPopUp = document.querySelector('.container-delete-hemo-popup.unsucess-form-doacao');
+
    if (periodoGestual, amamentacao, gripe, alcool, tatooPiercing, InfeSex, doencaSangue, transfusao, extraDente, endoscopia, malaria, hepatite, droga != "Sim" & peso < 50 || peso > 200)
    {
-       alert('testando validação!');
+        unsucessPopUp.style.display = 'block';
    }
    else
    {
-       
+        sucessPopUp.style.display = 'block';
    }
 }

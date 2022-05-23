@@ -1,5 +1,6 @@
 <?php 
-    if(!empty($_GET['CodHemocentro'])) {
+    if(!empty($_GET['CodHemocentro'])) 
+    {
 
         include_once('config.php');
 
@@ -9,8 +10,10 @@
 
         $result = $conexao->query($sql);
 
-        if($result->num_rows > 0) {
-            while($user_data = mysqli_fetch_assoc($result)) {
+        if($result->num_rows > 0) 
+        {
+            while($user_data = mysqli_fetch_assoc($result)) 
+            {
                 $nomeHemo = $user_data['Nome'];
                 $emailHemo = $user_data['Email'];
                 $telefoneHemo = $user_data['Telefone'];
@@ -22,7 +25,9 @@
                 $mensagemCont = $user_data['Mensagem'];
                 $fotoHemo = $user_data['FotoHemo'];
             }
-        } else {
+        } 
+        else 
+        {
             header('Location: hemocentros.php');
         }
     }
@@ -126,6 +131,8 @@
 
             </div>
         </div>
+
+        
     </div>
 
     <div id="popup-check">
@@ -144,7 +151,7 @@
         });
     }
     
-    previewBeforeUpload("fotoHemo");    
+    previewBeforeUpload("fotoHemo");  
 </script>
 </html>
 

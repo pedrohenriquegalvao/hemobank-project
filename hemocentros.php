@@ -3,12 +3,22 @@
     print_r($_SESSION);
     include_once("config.php");
 
-    
-    
-
     $sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
 
     $result = $conexao->query($sql);
+
+    if(isset($_SESSION['cpf']) == true and (isset($_SESSION['senha'])) == true)
+    {
+        echo 
+        '  
+            <style>
+            button.card-btn.delete-btn
+            {
+                display: none;
+            }
+            </style>
+        ';
+    }
 
 ?>
 

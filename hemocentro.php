@@ -1,16 +1,10 @@
 <?php 
-if(!empty($_GET['CodHemocentro'])) {
+if(!empty($_GET['CodHemocentro'])) 
+{
     session_start(); //Utilizado *sempre* que iniciar uma sessão 
     print_r($_SESSION);
     
     include_once("config.php");
-
-    if(!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) 
-    {
-        unset($_SESSION['cpf']);
-        unset($_SESSION['senha']);
-        header("Location: formularioDoador.php");
-    }
 
     $CodHemocentro = $_GET['CodHemocentro'];
 
@@ -18,8 +12,10 @@ if(!empty($_GET['CodHemocentro'])) {
 
     $result = $conexao->query($sql);
 
-    if($result->num_rows > 0) { 
-        while($user_data = mysqli_fetch_assoc($result)) { 
+    if($result->num_rows > 0) 
+    { 
+        while($user_data = mysqli_fetch_assoc($result)) 
+        { 
             $CodHemocentro = $user_data['CodHemocentro'];
             $nomeHemo = $user_data['Nome'];
             $emailHemo = $user_data['Email'];
@@ -33,6 +29,19 @@ if(!empty($_GET['CodHemocentro'])) {
             $fotoHemo = $user_data['FotoHemo'];
             
         }
+    }
+
+    if(isset($_SESSION['cpf']) == true and (isset($_SESSION['senha'])) == true)
+    {
+        echo 
+        '  
+            <style>
+            button.card-btn.edit-btn, button.update-estoque
+            {
+                display: none;
+            }
+            </style>
+        ';
     }
     
 }
@@ -121,7 +130,7 @@ if(!empty($_GET['CodHemocentro'])) {
                         <i class="fa-solid fa-user-tie"></i>
                         <p><span>Diretor Responsável:</span> <?php echo $diretorHemo?></p>
                     </div>
-                    <button>Agendar Doação</button>
+                    <button onclick="window.location.href='formdoacao.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Agendar Doação</button>
                     <?php
                         echo "<button class='card-btn edit-btn'>
                             <a href='edit.php?CodHemocentro=$CodHemocentro'>

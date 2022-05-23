@@ -1,5 +1,10 @@
 <?php
+    session_start(); //Utilizado *sempre* que iniciar uma sessão 
+    print_r($_SESSION);
     include_once("config.php");
+
+    
+    
 
     $sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
 
@@ -24,6 +29,9 @@
     <script src="js/navbar.js"></script>
 </head>
 <body>
+    <button class="logout-doador-btn">
+        <a href="logout.php">Sair</a>
+    </button>
 
     <nav>
         <a href="#"><img src="img/logo.png" class="nav-logo"></a>
@@ -44,9 +52,10 @@
                 <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
                 <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
                 <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
+                <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
 
                 <div class="item">
-                    <a class="sub-btn"><i class="fas fa-globe-americas"></i>Cadastro<i
+                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i>Cadastro<i
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
                         <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>

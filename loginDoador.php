@@ -28,7 +28,7 @@
         {
             $_SESSION["cpf"] = $cpf; 
             $_SESSION["senha"] = $senha;
-            header("Location: perfilDoador.php");
+            header("Location: hemocentros.php");
         }
     } 
     else // caso tente colocar a URL na mão, não irá passar nenhuma variável e vai voltar para a tela anterior

@@ -1,11 +1,18 @@
 <?php 
 if(!empty($_GET['CodHemocentro'])) {
+    session_start(); //Utilizado *sempre* que iniciar uma sessão 
+    print_r($_SESSION);
+    
+    include_once("config.php");
 
-    include_once('config.php');
+    if(!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) 
+    {
+        unset($_SESSION['cpf']);
+        unset($_SESSION['senha']);
+        header("Location: formularioDoador.php");
+    }
 
     $CodHemocentro = $_GET['CodHemocentro'];
-
-    include_once('config.php');
 
     $sql = "SELECT * FROM Hemocentro WHERE CodHemocentro=$CodHemocentro";
 
@@ -50,6 +57,9 @@ if(!empty($_GET['CodHemocentro'])) {
 </head>
 
 <body>
+    <button class="logout-doador-btn">
+        <a href="logout.php">Sair</a>
+    </button>
 
     <nav>
         <a href="#"><img src="img/logo.png" class="nav-logo"></a>
@@ -70,6 +80,7 @@ if(!empty($_GET['CodHemocentro'])) {
                 <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
                 <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
                 <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
+                <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
 
                 <div class="item">
                     <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i></i>Cadastro<i

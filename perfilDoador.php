@@ -80,8 +80,7 @@
             </div>
         </div>
     </nav>
-    <?php echo "<h1>Bem vindo $nomeDoador</h1>"; ?>
-    <div class="container">
+    <!--<div class="container">
         <h3>Informações do Usuário</h3>
         <div class="informacao-container">
             <p id="nomeUsuario">Código do doador: <?php echo $codDoador?></p>
@@ -100,7 +99,43 @@
     </div>
     <button class="logout-doador-btn">
         <a href="logout.php">Sair</a>
-    </button>
+    </button>-->
     
+
+    <div class="wrapper">
+    <div class="left">
+        <img src="profile-pic-animate.svg" 
+        alt="user">
+        <p class="type-usuario">DOADOR</p>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Informações</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Nome:</h4>
+                    <p><?php echo $nomeDoador?></p>
+                 </div>
+                 <div class="data">
+                    <h4>CPF:</h4>
+                    <p><?php echo $cpfDoador?></p>
+              </div>
+              <div class="data">
+                <h4>Data de Nascimento:</h4>
+                <p><?php echo $dataNascDoador?></p>
+            </div>
+            <div class="data">
+                <h4>Email:</h4>
+                <p><?php echo $emailDoador?></p>
+            </div>
+            </div>
+        </div>
+        <div class="button-perfil">
+            <input type="submit" name="submit" value="Editar Informações" class="Cadastrobtn solid" onclick="window.location.href='editDoador.php?codDoador=<?php echo $codDoador ?>'"/>
+            <input type="submit" name="submit" value="Sair" class="Cadastrobtn solid" onclick="window.location.href='logout.php'"/>
+        </div>
+        
+    </div>
+</div>
 </body>
 </html>

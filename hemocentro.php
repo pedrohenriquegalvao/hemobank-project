@@ -40,6 +40,22 @@ if(!empty($_GET['CodHemocentro']))
             {
                 display: none;
             }
+            button.criar-agenda 
+            {
+                display: none;
+            }
+            </style>
+        '; 
+    }
+    else
+    {
+        echo
+        '
+            <style>
+                .agendar-doacao-btn
+                {
+                    display: none;
+                }
             </style>
         ';
     }
@@ -130,7 +146,7 @@ if(!empty($_GET['CodHemocentro']))
                         <i class="fa-solid fa-user-tie"></i>
                         <p><span>Diretor Responsável:</span> <?php echo $diretorHemo?></p>
                     </div>
-                    <button onclick="window.location.href='formdoacao.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Agendar Doação</button>
+                    <button class="agendar-doacao-btn" onclick="window.location.href='formdoacao.php?CodHemocentro=<?php echo $CodHemocentro ?>'">Agendar Doação</button>
                     <?php
                         echo "<button class='card-btn edit-btn'>
                             <a href='edit.php?CodHemocentro=$CodHemocentro'>
@@ -139,6 +155,7 @@ if(!empty($_GET['CodHemocentro']))
                             </a>
                         </button>";
                     ?>
+                    <button class='criar-agenda' onclick="window.location.href='agendaHemocentro.php?CodHemocentro=<?php echo $CodHemocentro ?>'"><i class="fa-solid fa-calendar-days"></i>Criar Agenda</button>
                 </div>
             </div>
         </section>

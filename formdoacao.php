@@ -20,6 +20,26 @@
         header("Location: hemocentro.php?CodHemocentro=$CodHemocentro");
     }
 
+    $sql = "SELECT * FROM Agenda WHERE Cod_Hemocentro=$CodHemocentro";
+    $result = $conexao->query($sql);
+    if($result->num_rows == 0)
+    {
+    
+        echo
+        "
+        <div class='container-delete-hemo-popup unsucess-form-doacao verificacao'>
+            <div class='delete-hemo-popup-box'>
+            <img src='img/no-data-animate.svg' alt=''>
+            <h1>Sem Agendamento</h1>
+            <label>Infelizmente o hemocentro selecionado não possui nenhuma data para realização do agendamento. Tenta novamente mais tarde!</label>
+            <div class='delete-hemo-btns'>
+                <button class='btn-formDoacao invalido' onclick=\"window.location.href='hemocentro.php?CodHemocentro=$CodHemocentro'\">Ok</button>
+            </div>
+            </div>
+        </div>
+        ";
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -205,7 +225,7 @@
           <h1>Parabéns!</h1>
           <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
           <div class="delete-hemo-btns">
-            <button onclick="window.location.href='agendamento.html'" class="btn-formDoacao">Ok</button>
+            <button onclick="window.location.href='agendamento.php?CodHemocentro=<?php echo $CodHemocentro?>'" class="btn-formDoacao">Ok</button>
           </div>
         </div>
 

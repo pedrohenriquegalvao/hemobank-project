@@ -592,11 +592,11 @@ h2.title
     background-color: var(--Cor-2);
 }
 
-button.card-btn.edit-btn
+button.card-btn.edit-btn 
 {
-    cursor: pointer;
-    background-color: #ffb407;
-    transition: 0.5s ease;
+  cursor: pointer;
+  background-color: #7a0613;
+  transition: 0.5s ease;
 }
 
 button.card-btn.delete-btn
@@ -622,12 +622,12 @@ button.card-btn.delete-btn a
 
 button.card-btn.edit-btn:hover
 {
-    background-color: #ffc94b;
+    background-color: #5c050f;
 }
 
 button.card-btn.edit-btn a
 {
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -855,6 +855,21 @@ section.hemo-desc
     text-align: justify;
     font-size: 18px;
     font-weight: 400;
+}
+
+button.criar-agenda 
+{
+  background: #818181;
+}
+
+button.criar-agenda:hover
+{
+  background: #616161;
+}
+
+button.criar-agenda i
+{
+  margin-right: 8px;
 }
 
 @media (max-width: 900px)
@@ -1993,12 +2008,10 @@ h4{
   background-color: #a13333;
 }
 
-
-
-
-
-
-
+.container-delete-hemo-popup.unsucess-form-doacao.verificacao
+{
+  display: block !important;
+}
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 

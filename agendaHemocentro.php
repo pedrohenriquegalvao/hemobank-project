@@ -25,65 +25,75 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/criarAgenda.js"></script>
 </head>
 <body>
 
-    <nav>
-        <a href="#"><img src="img/logo.png" class="nav-logo"></a>
+<div class="AgendamentoCadastro-container">
+        <div class="AgendamentoCadastro-form-container">
+            <div class="AgendamentoCadastro-content">
+                <div class="AgendamentoCadastro-flex">
 
-        <!-- BOTAO PARA ABRIR O MENU -->
-        <div class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
+                    <abbr title="Voltar">
+                        <div class="return-arrow">
+                            <a href="hemocentro.php?CodHemocentro=<?php echo $CodHemocentro ?>"><i class="fa-solid fa-arrow-left"></i></a>
+                        </div>
+                    </abbr>
 
-        <div class="side-bar">
-
-            <!-- BOTAO PARA FECHAR O MENU -->
-            <div class="close-btn">
-                <i class="fas fa-times"></i>
-            </div>
-
-            <div class="menu">
-                <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
-                <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
-                <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
-                <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
-
-                <div class="item">
-                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i>Cadastro<i
-                            class="fas fa-angle-right dropdown"></i> </a>
-                    <div class="sub-menu">
-                        <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
-                        <a href="formularioDoador.php" class="sub-item">Cadastro Doador</a>
+                    <div class="content-calendar-doador-mobile">
+                        <h3>Criação dos Horários de Agendamento</h3>
+                        <p>Selecione uma data e um horário para gerar um novo horário para agendamento do Hemocentro</p>
                     </div>
-                </div>
-                
-            </div>
-        </div>
-    </nav>
 
+                    <div class="criarAgenda-container">
+                        <!--
+                            <div class="criarAgenda-text">
+                                <h1>Criar Agenda</h1>
+                                <p>Para criar uma horário para agendamento basta seleciona uma data e uma horário e clicar no botão Criar Agenda!</p>
+                            </div>
+                        -->
+                        <div class="form-criarAgenda-container">
+                            <form action="criaAgenda.php" method="POST">
+                                <div class="input-container">
+                                    <input type="date" class="inputAgenda" name="DataAgenda" id="DataAgenda" required>
+                                    <input type="time" class="inputAgenda" name="HoraAgenda" id="HoraAgenda" required>
 
-    <div class="criarAgenda-container">
-        <!--
-        <div class="criarAgenda-text">
-            <h1>Criar Agenda</h1>
-            <p>Para criar uma horário para agendamento basta seleciona uma data e uma horário e clicar no botão Criar Agenda!</p>
-        </div>
-        -->
-        <div class="form-criarAgenda-container">
-            <form action="criaAgenda.php" method="POST">
-                <div class="input-container">
-                    <input type="date" class="inputAgenda" name="DataAgenda" id="DataAgenda">
-                    <input type="time" class="inputAgenda" name="HoraAgenda" id="HoraAgenda">
-        
-                    <div class="submitAgenda">
-                        <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro?>">
-                        <input type="submit" name="create" id="create" value="Criar Agenda">
+                                    <div class="submitAgenda">
+                                        <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro?>">
+                                        <input type="submit" onclick="sucessCalendar()" name="create" id="create" value="Criar Agenda">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+
                 </div>
-            </form>
+            </div>
         </div>
     </div>
+
+    <div class="calendar-panel calendar-left-panel">
+
+        <div class="content-calendar-doador">
+            <h3>Criação dos Horários de Agendamento</h3>
+            <p>Selecione uma data e um horário para gerar um novo horário para agendamento do Hemocentro</p>
+        </div>
+
+        <img src="img/online-calendar-animate.svg" class="image" alt="" />
+    </div>
+
+    <div class="container-delete-hemo-popup sucess-form-doacao">
+
+    <div class="delete-hemo-popup-box">
+        <img src="img/ok-animate.svg" alt="">
+        <h1>Parabéns!</h1>
+        <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
+        <div class="delete-hemo-btns">
+            <button class="btn-formDoacao">Ok</button>
+        </div>
+    </div>
+
+</div>
     
 </body>
 </html>

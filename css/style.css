@@ -2015,48 +2015,183 @@ h4{
 
 /* -=-=-=-=-=-=-=-=-=-= TELA DE CRIAR AGENDA -=-=-=-=-=-=-=-=-=-= */
 
+.AgendamentoCadastro-content
+ {
+    width: 40%;
+    float: right;
+    margin-right: 100px;
+    margin-top: 100px;
+}
+
+.AgendamentoCadastro-container:before 
+{
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(-45deg, var(--Cor-3) 0%, var(--Cor-3) 100%);
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    z-index: 6;
+}
+
+.calendar-panel.calendar-left-panel .image 
+{
+    width: 88%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+.calendar-panel 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 6;
+}
+
+.calendar-left-panel 
+{
+    pointer-events: all;
+    padding: 10rem 8% 2rem 13%;
+    position: relative;
+}
+
+.calendar-panel .content-calendar-doador
+{
+    color: #fff;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+}
+
+.calendar-panel h3 
+{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 2rem;
+}
+
+.calendar-panel p 
+{
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+    margin-bottom: 50px;
+}
+
+.content-calendar-doador-mobile 
+{
+    display: none;
+}
+
+.content-calendar-doador-mobile h3 
+{
+    color: var(--Cor-4);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.content-calendar-doador-mobile p 
+{
+    color: #706f6f;
+}
+
+@media (max-width: 1100px) 
+{
+    .AgendamentoCadastro-content
+    {
+        width: 40%;
+        float: right;
+        margin-right: 50px;
+        margin-top: 40px;
+    }
+
+    .calendar-left-panel 
+    {
+        pointer-events: all;
+        padding: 10rem 3% 2rem 13%;
+        position: relative;
+        right: 80px;
+    }
+}
+
+@media (max-width: 700px) 
+{
+    .AgendamentoCadastro-container:before 
+    {
+        display: none;
+    }
+
+    .calendar-panel 
+    {
+        display: none;
+    }
+
+    .AgendamentoCadastro-content 
+    {
+        width: 100%;
+        margin: 0;
+        padding: 40px;
+    }
+
+    .content-calendar-doador-mobile 
+    {
+        display: block;
+        text-align: center;
+    }
+
+    .form-criarAgenda-container 
+    {
+        margin-top: 50px !important;
+    }
+
+}
+
 .form-criarAgenda-container 
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 200px;
 }
 
 .form-criarAgenda-container form 
 {
-  width: 1000px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f3f3f3;
-  border-radius: 10px;
+    width: 1000px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .form-criarAgenda-container form .inputAgenda 
 {
-  width: 300px;
-  background: #dddddd;
-  padding: 15px;
-  font-size: 20px;
-  border: none;
-  border-radius: 8px;
-  border: 1px solid #cbc7c7;
-  margin: 15px;
+    width: 300px;
+    background: #dddddd;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    margin: 40px;
+    display: block;
 }
 
 .submitAgenda 
 {
-  text-align: center;
-  margin-top: 30px;
+    text-align: center;
+    margin-top: 30px;
 }
 
-.submitAgenda [type='submit']
+.submitAgenda [type='submit'] 
 {
-    width: 220px;
-    height: 40px;
+    width: 300px;
+    height: 50px;
     border: none;
     background: var(--Cor-3);
     color: white;
@@ -2066,30 +2201,7 @@ h4{
 
 .submitAgenda [type='submit']:hover
 {
-  background: #5c0202;
-}
-
-@media (max-width: 1000px)
-{
-  .form-criarAgenda-container form 
-  {
-    width: 100%;
-    margin: 0px 50px;
-  }
-}
-
-@media (max-width: 760px)
-{
-  .form-criarAgenda-container form .inputAgenda
-  {
-    display: block;
-  }
-  
-  .form-criarAgenda-container form
-  {
-    height: 300px;
-    background-color: white;
-  }
+    background: #5c0202;
 }
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
@@ -2194,3 +2306,14 @@ h4{
 }
 
 /* -------------------- FIM RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */
+
+.return-arrow i
+{
+  color: var(--Cor-3);
+  content: "\f060";
+  font-size: 30px;
+  position: fixed;
+  top: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}

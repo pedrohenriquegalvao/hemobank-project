@@ -60,7 +60,7 @@
 
                                     <div class="submitAgenda">
                                         <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro?>">
-                                        <input type="submit" onclick="sucessCalendar()" name="create" id="create" value="Criar Agenda">
+                                        <input type="submit" name="create" id="create" value="Criar Agenda">
                                     </div>
                                 </div>
                             </form>
@@ -84,16 +84,16 @@
 
     <div class="container-delete-hemo-popup sucess-form-doacao">
 
-    <div class="delete-hemo-popup-box">
-        <img src="img/ok-animate.svg" alt="">
-        <h1>Parabéns!</h1>
-        <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
-        <div class="delete-hemo-btns">
-            <button class="btn-formDoacao">Ok</button>
+        <div class="delete-hemo-popup-box">
+            <img src="img/ok-animate.svg" alt="">
+            <h1>Parabéns!</h1>
+            <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
+            <div class="delete-hemo-btns">
+                <button class="btn-formDoacao">Ok</button>
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
     
 </body>
 </html>

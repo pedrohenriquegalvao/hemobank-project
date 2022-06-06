@@ -1,6 +1,7 @@
 <?php
 
     include_once('config.php');
+    include_once('agendaHemocentro.php');
 
     // Pegar código do hemocentro
     if(isset($_POST['create']))
@@ -8,21 +9,25 @@
         $CodHemocentro = $_POST['CodHemocentro'];
         $DataAgenda = $_POST['DataAgenda'];
         $HoraAgenda = $_POST['HoraAgenda'] . ":00";
-        
-
-        print_r($CodHemocentro);
+    
+        /*print_r($CodHemocentro);
         echo '<br>';
         print_r($DataAgenda);
         echo '<br>';
-        print_r($HoraAgenda);
+        print_r($HoraAgenda);*/
         
-        $result = "INSERT INTO agenda(Cod_Hemocentro, DataAgenda, Horario) VALUES ('$CodHemocentro','$DataAgenda','$HoraAgenda')";
+        $sql = "INSERT INTO agenda(Cod_Hemocentro, DataAgenda, Horario) VALUES ('$CodHemocentro','$DataAgenda','$HoraAgenda')";
+        $result = $conexao->query($sql);
 
-        echo '<br>';
-        print_r($result);
-        $sql = $conexao->query($result);
-        echo '<br>';
-        header("Location: agendaHemocentro.php?CodHemocentro=$CodHemocentro");
+        echo "<script> 
+            sucessPopUp = document.querySelector('.container-delete-hemo-popup.sucess-form-doacao');
+            sucessButton = document.querySelector('.btn-formDoacao');
+
+            sucessPopUp.style.display = 'block';
+            sucessButton.addEventListener('click', function(){ 
+                window.location.href='agendaHemocentro.php?CodHemocentro=$CodHemocentro';
+            })
+            </script>";
     }
     else
     {

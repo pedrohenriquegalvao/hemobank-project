@@ -5,7 +5,7 @@
     include_once('config.php');
 
     if(!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) 
-    {
+    { //verifica se a sessão iniciada acima possui CPF e SENHA. Caso não possuam:
         unset($_SESSION['cpf']);
         unset($_SESSION['senha']);
         header("Location: formularioDoador.php");
@@ -69,13 +69,15 @@
                 <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
 
                 <div class="item">
-                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i></i>Cadastro<i
+                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i>Login<i
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
-                        <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
-                        <a href="formularioDoador.php" class="sub-item">Cadastro Doador</a>
+                        <a href="formulario.html" class="sub-item">Login Hemocentro</a>
+                        <a href="formularioDoador.php" class="sub-item">Login Doador</a>
                     </div>
                 </div>
+
+                <div class="item sair-btn"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>Sair</a></div>
                 
             </div>
         </div>
@@ -139,3 +141,16 @@
 </div>
 </body>
 </html>
+<?php 
+    /* A verificação de sessão foi feita antes do html dessa pagina. Caso tenha uma sessão com CPF e senha,
+     a pagina não irá voltar para formularioDoador.php e irá rodar essa parte do codigo: */
+    echo 
+    '  
+        <style>
+        .item.sair-btn
+        {
+            display: block;
+        }
+        </style>
+    '; // Altera o display do item de sair do menu lateral para Block, fazendo ele aparecer.
+?>

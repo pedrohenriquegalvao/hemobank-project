@@ -1,24 +1,10 @@
 <?php
     session_start(); //Utilizado *sempre* que iniciar uma sessão 
-    print_r($_SESSION);
     include_once("config.php");
 
     $sql = "SELECT * FROM Hemocentro ORDER BY CodHemocentro DESC";
 
     $result = $conexao->query($sql);
-
-    if(isset($_SESSION['cpf']) == true and (isset($_SESSION['senha'])) == true)
-    {
-        echo 
-        '  
-            <style>
-            button.card-btn.delete-btn
-            {
-                display: none;
-            }
-            </style>
-        ';
-    }
 
 ?>
 
@@ -39,9 +25,6 @@
     <script src="js/navbar.js"></script>
 </head>
 <body>
-    <button class="logout-doador-btn">
-        <a href="logout.php">Sair</a>
-    </button>
 
     <nav>
         <a href="#"><img src="img/logo.png" class="nav-logo"></a>
@@ -65,13 +48,15 @@
                 <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
 
                 <div class="item">
-                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i>Cadastro<i
+                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i>Login<i
                             class="fas fa-angle-right dropdown"></i> </a>
                     <div class="sub-menu">
-                        <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
-                        <a href="formularioDoador.php" class="sub-item">Cadastro Doador</a>
+                        <a href="formulario.html" class="sub-item">Login Hemocentro</a>
+                        <a href="formularioDoador.php" class="sub-item">Login Doador</a>
                     </div>
                 </div>
+
+                <div class="item sair-btn"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>Sair</a></div>
                 
             </div>
         </div>
@@ -155,4 +140,27 @@
          
     }
     </script>
+
+
+<?php
+
+if(isset($_SESSION['cpf']) == true and (isset($_SESSION['senha'])) == true)
+{
+    echo 
+    '  
+        <style>
+        button.card-btn.delete-btn
+        {
+            display: none;
+        }
+
+        .item.sair-btn
+        {
+            display: block;
+        }
+        </style>
+    ';
+}
+
+?>
    

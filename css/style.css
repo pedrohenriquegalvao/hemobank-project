@@ -151,6 +151,11 @@ nav .menu-btn
     cursor: pointer;
 }
 
+.item.sair-btn
+{
+  display: none;
+}
+
 
 /* -~-~-~-~-~-~-~-~-~-~ FORM CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
 
@@ -2202,6 +2207,55 @@ h4{
 .submitAgenda [type='submit']:hover
 {
     background: #5c0202;
+}
+
+/* -------------------- TELA DE AGENDAMENTO -------------------- */
+
+.agendamento-title
+{
+  font-size: 35px;
+  margin-top: 80px;
+  text-align: center;
+  color: var(--Cor-3);
+  font-weight: 500;
+}
+
+.card-hemo.agendamento 
+{
+  width: 250px !important;
+  border: none;
+  transition: 0.5s ease-out;
+}
+
+.card-hemo.agendamento:hover
+{
+  background-color: var(--Cor-2);
+  color: white;
+}
+
+.card-hemo.agendamento span
+{
+  font-weight: bold;
+}
+
+.agendar-hover
+{
+  display: none;
+}
+
+.container-delete-hemo-popup.agendamento
+{
+  display: none;
+}
+
+.container-delete-hemo-popup.agendamento img
+{
+  width: 320px;
+}
+
+.container-delete-hemo-popup.agendamento .delete-hemo-popup-box
+{
+  padding: 20px 20px 40px 20px;
 }
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */

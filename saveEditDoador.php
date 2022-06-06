@@ -16,8 +16,11 @@
 
         $sql = "UPDATE Doador SET Nome='$nomeDoador', CPF='$cpfDoador', Email='$emailDoador', Data_de_Nasc='$dataNascDoador' WHERE CodDoador=$codDoador";
         $result = $conexao->query($sql);
+        print_r($sql);
+        print_r($result);
 
-    } 
+
+    }
     
     
     header("Location: perfilDoador.php");

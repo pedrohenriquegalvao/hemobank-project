@@ -104,7 +104,7 @@
 
     <div class="wrapper">
     <div class="left">
-        <img src="profile-pic-animate.svg" 
+        <img src="img/profile-pic-animate.svg" 
         alt="user">
         <p class="type-usuario">DOADOR</p>
     </div>

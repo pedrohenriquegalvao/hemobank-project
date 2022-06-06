@@ -497,7 +497,7 @@ nav .menu-btn
 
 /* -~-~-~-~-~-~-~-~-~-~ PÁGINA SUCESSO CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
 
-.sucess-form-hemo 
+.sucess-form-hemo, .sucess-agendamento-doacao
 {
     display: flex;
     flex-direction: column;
@@ -509,12 +509,12 @@ nav .menu-btn
     color: white;
 }
 
-.sucess-form-hemo img 
+.sucess-form-hemo img, .sucess-agendamento-doacao img
 {
     width: 400px;
 }
 
-.sucess-form-hemo .Text
+.sucess-form-hemo .Text, .sucess-agendamento-doacao .Text
 {
     margin: 50px;
 }

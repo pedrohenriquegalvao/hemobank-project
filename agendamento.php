@@ -1,40 +1,39 @@
 <?php
+    session_start(); // Iniciando uma sessão
 
-// Iniciando uma sessão
-session_start();
+    // Realizando conexão com o BD
+    include_once('config.php');
 
-// Realizando conexão com o BD
-include_once('config.php');
-
-// Verificar se está pegando o cod do Hemocentro pela URL
-if (isset($_GET['CodHemocentro'])) {
-    $CodHemocentro = $_GET['CodHemocentro'];
-}
-
-// Verifica se possui uma senha com algum CPF ou senha cadastrada
-if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
-    unset($_SESSION['cpf']);
-    unset($_SESSION['senha']);
-    header("Location: hemocentro.php?CodHemocentro=$CodHemocentro");
-} else {
-    $CpfDoador = $_SESSION['cpf'];
-    //print_r($CpfDoador);
-    //echo '<br>';
-    $sql = "SELECT CodDoador FROM doador WHERE CPF='$CpfDoador'";
-    //print_r($sql);
-    //echo '<br>';
-    $result = $conexao->query($sql);
-    //print_r($result);
-
-    if ($result->num_rows > 0) {
-        while ($dadosDoador = mysqli_fetch_assoc($result)) {
-            $CodDoador = $dadosDoador['CodDoador'];
-        }
+    // Verificar se está pegando o cod do Hemocentro pela URL
+    if (isset($_GET['CodHemocentro'])) {
+        $CodHemocentro = $_GET['CodHemocentro'];
     }
-    //echo '<br>';
-    //print_r($CodDoador);
 
-}
+    // Verifica se possui uma senha com algum CPF ou senha cadastrada
+    if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
+        unset($_SESSION['cpf']);
+        unset($_SESSION['senha']);
+        header("Location: hemocentro.php?CodHemocentro=$CodHemocentro");
+
+    } else {
+        $CpfDoador = $_SESSION['cpf'];
+        //print_r($CpfDoador);
+        //echo '<br>';
+        $sql = "SELECT CodDoador FROM doador WHERE CPF='$CpfDoador'";
+        //print_r($sql);
+        //echo '<br>';
+        $result = $conexao->query($sql);
+        //print_r($result);
+
+        if ($result->num_rows > 0) {
+            while ($dadosDoador = mysqli_fetch_assoc($result)) {
+                $CodDoador = $dadosDoador['CodDoador'];
+            }
+        }
+        //echo '<br>';
+        //print_r($CodDoador);
+
+    }
 
 
 ?>
@@ -121,9 +120,11 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
 
                 ";
                 */
+                $escapedDataAgenda = json_encode($DataAgenda);
+                $escapedHorarioAgenda = json_encode($HorarioAgenda);
                 echo
                 "
-                <button onclick='popUpConfirmagendamento()' class='card-hemo agendamento'>
+                <button onclick='popUpConfirmagendamento($escapedDataAgenda, $escapedHorarioAgenda)' class='card-hemo agendamento'>
                     <h2 class='title'><span>Data:</span> $DataAgenda</h2>
                     <h2 class='title'><span>Horario:</span> $HorarioAgenda</h2>
                     <h1 class='agendar-hover'>Agendar</h1>
@@ -131,6 +132,7 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
                 ";
             }
         }
+        
 
         ?>
     </div>
@@ -141,11 +143,11 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
 
         <div class="delete-hemo-popup-box">
             <img src="img/confirmed-animate.svg" alt="">
-            <h1>Deseja Confirmar o Agedamento?</h1>
+            <h1>Deseja Confirmar o Agendamento?</h1>
             <label>Você realmente deseja confirmar o seu agendamento?</label>
             <div class="delete-hemo-btns">
                 <a href="" class="delete-hemo-btn1 cancelar-agendamento">Cancelar</a>
-                <a href="" class="delete-hemo-btn2 confirmar-agendamento">Confirmar Agendamento</a>
+                <a class="delete-hemo-btn2 confirmar-agendamento">Confirmar Agendamento</a>
             </div>
         </div>
 
@@ -154,9 +156,8 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
 </body>
 
 <script>
-    function popUpConfirmagendamento()
+    function popUpConfirmagendamento(dataAgendamento, horario)
     {
-        alert('CORNO');
         var btn_agendamento = document.querySelector('.container-delete-hemo-popup.agendamento');
         var btn_cancel = document.querySelector('.delete-hemo-btn1.cancelar-agendamento');
         var btn_confirm = document.querySelector('.delete-hemo-btn2.confirmar-agendamento');
@@ -172,7 +173,8 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
         btn_confirm.addEventListener('click', function () 
         {
             pop_up_box.style.display = 'none';
-            window.location.href = "criaAgendamento.php?CodHemocentro="<?php echo $CodHemocentro ?>"&CodDoador="<?php echo $CodDoador?>"&DataAgendamento="<?php echo $DataAgenda?>"&Horario="<?php echo $HorarioAgenda?>"";
+            window.location.href = "criaAgendamento.php?CodHemocentro=<?php echo $CodHemocentro ?>&CodDoador=<?php echo $CodDoador ?>&DataAgendamento="+dataAgendamento+"&Horario="+horario+"";
+            /*window.location.href = "criaAgendamento.php?CodHemocentro=<?php echo $CodHemocentro ?>&CodDoador=<?php echo $CodDoador?>&DataAgendamento=<?php echo $DataAgenda?>&Horario=<?php echo $HorarioAgenda?>"; */
         });
         
     }

@@ -82,19 +82,22 @@
             <p class="type-usuario">DOADOR</p>
         </div>
         <div class="right">
+            <div class="info">
+                <h3>Editar Informações</h3>
         <div class="form-editar-doador">
             <form action="saveEditDoador.php" method="POST">
-                <label for="nomeDoador">Nome:</label><br>
+                <h4>Nome:</h4>
                 <input type="text" id="nomeDoador" name="nomeDoador" value="<?php echo $nomeDoador?>"><br>
-                <label for="cpfDoador">CPF:</label><br>
+                <h4>CPF:</h4>
                 <input type="text" id="cpfDoador" name="cpfDoador" value="<?php echo $cpfDoador?>"><br>
-                <label for="dataNascDoador">Data de Nascimento:</label><br>
+                <h4>Data de Nascimento:</h4>
                 <input type="text" id="dataNascDoador" name="dataNascDoador" value="<?php echo $dataNascDoador?>"><br>
-                <label for="emailDoador">Email:</label><br>
+                <h4>Email:</h4>
                 <input type="text" id="emailDoador" name="emailDoador" value="<?php echo $emailDoador?>"><br>
                 <input type="hidden" name="codDoador" value="<?php echo $codDoador ?>">
                 <input type="submit" name="submit" id="submit" value="Salvar alterações">
             </form>
+            </div>
         </div>          
         </div>
         </div>

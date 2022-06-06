@@ -55,7 +55,6 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/agendamento.js"></script>
 </head>
 
 <body>
@@ -145,14 +144,39 @@ if (!isset($_SESSION['cpf']) == true and (!isset($_SESSION['senha'])) == true) {
             <h1>Deseja Confirmar o Agedamento?</h1>
             <label>Você realmente deseja confirmar o seu agendamento?</label>
             <div class="delete-hemo-btns">
-                <a href="#" class="delete-hemo-btn1 cancelar-agendamento">Cancelar</a>
-                <a href="#" class="delete-hemo-btn2 confirmar-agendamento">Confirmar Agendamento</a>
+                <a href="" class="delete-hemo-btn1 cancelar-agendamento">Cancelar</a>
+                <a href="" class="delete-hemo-btn2 confirmar-agendamento">Confirmar Agendamento</a>
             </div>
         </div>
 
     </div>
 
 </body>
+
+<script>
+    function popUpConfirmagendamento()
+    {
+        alert('CORNO');
+        var btn_agendamento = document.querySelector('.container-delete-hemo-popup.agendamento');
+        var btn_cancel = document.querySelector('.delete-hemo-btn1.cancelar-agendamento');
+        var btn_confirm = document.querySelector('.delete-hemo-btn2.confirmar-agendamento');
+        var pop_up_box = document.querySelector('.container-delete-hemo-popup');
+
+        btn_agendamento.style.display = 'block';
+
+        btn_cancel.addEventListener('click', function () 
+        {
+            pop_up_box.style.display = 'none';
+            //document.location.reload(true);
+        });
+        btn_confirm.addEventListener('click', function () 
+        {
+            pop_up_box.style.display = 'none';
+            window.location.href = "criaAgendamento.php?CodHemocentro="<?php echo $CodHemocentro ?>"&CodDoador="<?php echo $CodDoador?>"&DataAgendamento="<?php echo $DataAgenda?>"&Horario="<?php echo $HorarioAgenda?>"";
+        });
+        
+    }
+</script>
 
 </html>
 

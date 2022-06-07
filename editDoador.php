@@ -75,9 +75,9 @@
             </div>
         </div>
     </nav>
-    <div class="wrapper-editar">
+    <div class="wrapper">
         <div class="left">
-            <img src="img/profile-pic-animate.svg" 
+            <img src="profile-pic-animate.svg" 
             alt="user">
             <p class="type-usuario">DOADOR</p>
         </div>
@@ -87,20 +87,15 @@
         <div class="form-editar-doador">
             <form action="saveEditDoador.php" method="POST">
                 <h4>Nome:</h4>
-                <input type="text" id="nomeDoador" name="nomeDoador"  class="input-editar-perfil" value="<?php echo $nomeDoador?>">
-                <input type="hidden" name="cpfDoador" value="<?php echo $cpfDoador ?>">
+                <input type="text" id="nomeDoador" name="nomeDoador" value="<?php echo $nomeDoador?>"><br>
                 <h4>CPF:</h4>
-                <input type="text"  class="input-editar-perfil" disabled value="<?php echo $cpfDoador?>">
-                <input type="hidden" name="dataNascDoador" value="<?php echo $dataNascDoador ?>">
+                <input type="text" id="cpfDoador" name="cpfDoador" value="<?php echo $cpfDoador?>"><br>
                 <h4>Data de Nascimento:</h4>
-                <input type="text" class="input-editar-perfil"  disabled value="<?php echo $dataNascDoador?>">
+                <input type="text" id="dataNascDoador" name="dataNascDoador" value="<?php echo $dataNascDoador?>"><br>
                 <h4>Email:</h4>
-                <input type="text" id="emailDoador" name="emailDoador" class="input-editar-perfil" value="<?php echo $emailDoador?>">
+                <input type="text" id="emailDoador" name="emailDoador" value="<?php echo $emailDoador?>"><br>
                 <input type="hidden" name="codDoador" value="<?php echo $codDoador ?>">
-                <div class="button-perfil">
-                    <input type="submit" name="update" id="update" class="Cadastrobtn solid" value="Salvar alterações">
-                    <input type="submit" name="back" id="back" class="Cadastrobtn solid" value="Voltar">
-                </div>
+                <input type="submit" name="submit" id="submit" value="Salvar alterações">
             </form>
             </div>
         </div>          

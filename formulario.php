@@ -71,6 +71,7 @@
         <img class="cadastro-hemo" src="img/health-professional-team-animate.svg" alt="">
         <h4 class="Text">Você será redirecionado a página de hemocentros em alguns instantes.</h4>
     </div>
+    <!---->
 </body>
 
 <script>

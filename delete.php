@@ -32,7 +32,7 @@
             print_r($resultDelete);
         }
         
-        //header('Location: hemocentros.php');
+        header('Location: hemocentros.php');
     }
 
 ?>

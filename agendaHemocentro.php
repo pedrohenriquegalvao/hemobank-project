@@ -87,7 +87,7 @@
         <div class="delete-hemo-popup-box">
             <img src="img/ok-animate.svg" alt="">
             <h1>Parabéns!</h1>
-            <label>Você possui todos os atributos necessários para seguir com o agendamento da doação!</label>
+            <label>A agenda foi criada com sucesso!</label>
             <div class="delete-hemo-btns">
                 <button class="btn-formDoacao">Ok</button>
             </div>

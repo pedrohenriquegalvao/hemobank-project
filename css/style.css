@@ -497,7 +497,7 @@ nav .menu-btn
 
 /* -~-~-~-~-~-~-~-~-~-~ PÁGINA SUCESSO CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
 
-.sucess-form-hemo, .sucess-agendamento-doacao
+.sucess-form-hemo
 {
     display: flex;
     flex-direction: column;
@@ -509,14 +509,71 @@ nav .menu-btn
     color: white;
 }
 
-.sucess-form-hemo img, .sucess-agendamento-doacao img
+.sucess-form-hemo img
 {
     width: 400px;
 }
 
-.sucess-form-hemo .Text, .sucess-agendamento-doacao .Text
+.sucess-form-hemo .Text
 {
     margin: 50px;
+}
+
+.sucess-agendamento-doacao
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sucess-agendamento-doacao .Text
+{
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: lighter;
+  margin: 15px 45px;
+  text-align: center;
+}
+
+.sucess-agendamento-doacao img
+{
+  width: 600px;
+}
+
+.agendamento-doacao-body
+{
+  background: #e2f5e2;
+}
+
+img.cadastro-hemo
+{
+  width: 450px;
+}
+
+@media(max-width: 880px)
+{
+  .sucess-agendamento-doacao img 
+  {
+    width: 500px;
+  }
+}
+
+@media(max-width: 650px)
+{
+  .sucess-agendamento-doacao img 
+  {
+    width: 400px;
+  }
+}
+
+@media(max-width: 430px)
+{
+  .sucess-agendamento-doacao img 
+  {
+    width: 320px;
+  }
 }
 
 /* -~-~-~-~-~-~-~-~-~-~ CARDS DOS HEMOCENTROS -~-~-~-~-~-~-~-~-~-~ */

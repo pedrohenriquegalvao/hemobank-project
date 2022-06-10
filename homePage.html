@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/93d18202e7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
+
+</head>
+<body class="body-homepage">
+    <nav>
+        <a href="#"><img src="img/logo.png" class="nav-logo"></a>
+
+        <!-- BOTAO PARA ABRIR O MENU -->
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="side-bar">
+
+            <!-- BOTAO PARA FECHAR O MENU -->
+            <div class="close-btn">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div class="menu">
+                <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
+                <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
+                <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
+
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i></i>Cadastro<i
+                            class="fas fa-angle-right dropdown"></i> </a>
+                    <div class="sub-menu">
+                        <a href="formulario.html" class="sub-item">Cadastro Hemocentro</a>
+                        <a href="formularioDoador.php" class="sub-item">Cadastro Doador</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    <div class="centraliza-header">
+        <header class="header-homepage">
+            <div class="container-homepage header_container">
+                <div class="header_left">
+                    <h1 class="header-title"><strong>DOE SANGUE E AJUDE PESSOAS NECESSITADAS.</strong></h1>
+                    <p>A doação de sangue é um ato voluntário e altruísta de extrema importância. A única forma
+                         de salvar a vida de pacientes que precisam de transfusão sanguínea é a através deste gesto de amor e solidariedade.</p>
+                    <p>Que tal praticar esse gesto lindo? ESQUECA TUDO</p>
+                    <input type="submit" name="submit" value="Realizar doação" class="Doacaobtn solid" onclick="window.location.href='formularioDoador.php'"/>
+                </div>
+                
+                <div class="header_right">
+                    <div class="header_right-image">
+                        <img src="img/blood-donation-homepage.svg">
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--TERMINO DO HEADER-->
+    <section class="section-orientation">
+        <div class="container-homepage orientation_container">
+            <div class="orientation_left">
+                <h1><strong>Orientações para doação</strong></h1>
+                <p>Para agendar sua doação com sucesso, siga os passos demonstrados em formato de cards a seguir.
+                    Após realizar todos os passos da forma como foi solicitada, está tudo pronto! 
+                </p>
+                <p>Basta apenas se apresentar no Hemocentro designado, de acordo com sua data e hora escolhida.
+                </p>
+                <input type="submit" name="submit" value="AGENDE SUA DOAÇÃO" class="Agendabtn solid" onclick="window.location.href='formularioDoador.php'"/>
+            </div>
+            <div class="orientation_right">
+                <article class="orientation">
+                    <span class="step_icon"></span>
+                    <h5>Passo 1:</h5>
+                    <p>Relize seu login em nosso site para se tornar apto para um agendamento.</p>
+                </article>
+                <article class="orientation">
+                    <span class="step_icon"></span>
+                    <h5>Passo 2:</h5>
+                    <p>Selecione o Hemocentro desejado. Você poderá visualizar suas informações clicando 
+                        nos respectivos cards.
+                    </p>
+                </article>
+                <article class="orientation">
+                    <span class="step_icon"></span>
+                    <h5>Passo 3:</h5>
+                    <p>Preencha o formulario de doação de forma correta. Isso o permitirá realizar um 
+                        agendamento caso esteja apto.
+                    </p>
+                </article>
+                <article class="orientation">
+                    <span class="step_icon"></span>
+                    <h5>Passo 4:</h5>
+                    <p>Clique em realizar um agendamento, onde irá aparecer os horarios disponiveis.
+                         Feito isso basta apenas selecionar o horário desejado.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!--TERMINO DAS ORIENTACOES-->
+    <section class="section-about">
+        <div class="container-homepage-about">
+            <div class="about-left">
+                <h2><strong>SOBRE O HEMOBANK</strong></h2>
+                <p>Nosso projeto começou com uma forma de incentivo para conscientizar as pessoas sobre a doação de sangue.
+                    No entanto, começamos juntando hemocentros do Paraná (PR) em nosso site, e houve um grande resultado 
+                    positivo. Após fomos aumentando nosso tamanho.
+                </p>
+                <p>
+                    Hoje temos orgulho de dizer que fizemos a agregação de todos os hemocentros do sul do Brasil. Somos o unico site 
+                    que emgloba mais de 1 hemocentro, assim deixando as coisas mais fáceis para você, doador.
+                </p>
+            </div>
+            <div class="about-right">
+            </div>
+        </div>        
+    </section>
+    <section class="section-requirements">
+        <div class="container-homepage-requirements">
+            <div class="requirements-upper">
+                <h1>Quais são os requisitos para doação de sangue?</h1>
+                <p>Podem doar sangue pessoas entre 16 e 69 anos e que estejam pesando mais de 50kg. Além disso, 
+                    é preciso apresentar documento oficial com foto e menores de 18 anos só podem doar com 
+                    consentimento formal dos responsáveis. Pessoas com febre, gripe ou resfriado, diarreia 
+                    recente, grávidas e mulheres no pós-parto não podem doar temporariamente.</p>
+            </div>
+            <div class="organize-requirements">
+                <div class="requirements-left">
+                    <img src="img/blood-donation-requirements.svg">
+                </div>
+                <div class="requirements-right">
+                    <p>O procedimento para doação de sangue é simples, rápido e totalmente seguro. Não 
+                        há riscos para o doador, porque nenhum material usado na coleta do sangue é reutilizado,
+                         o que elimina qualquer possibilidade de contaminação.
+                    </p>
+                    <p>
+                        Os requisitos para doar sangue é estar com bom estado de saúde e seguir os seguintes passos:
+                    </p>
+                    <p>
+                        Estar alimentado. Evite alimentos gordurosos nas 3 horas que antecedem a doação de sangue.
+                        Caso seja após o almoço, aguardar 2 horas.
+                        Ter dormido pelo menos 6 horas nas últimas 24 horas.
+                        Pessoas com idade entre 60 e 69 anos só poderão doar sangue se já o tiverem feito antes 
+                        dos 60 anos.
+                        A frequência máxima é de quatro doações de sangue anuais para o homem e de três doações 
+                        de sangue anuais para as mulher.
+                        O intervalo mínimo entre uma doação de sangue e outra é de dois meses para os homens e 
+                        de três meses para as mulheres.
+                    </p>       
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/homePage.js"></script>
+</body>
+</html>

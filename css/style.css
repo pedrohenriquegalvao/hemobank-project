@@ -2620,28 +2620,6 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   font-size: 0.85rem;
 }
 
-.Agendabtn 
-{
-  width: 250px;
-  background-color: #f0ca1f;
-  border: none;
-  outline: none;
-  height: 49px;
-  border-radius: 49px;
-  color: rgb(0, 0, 0);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.Agendabtn:hover 
-{
-  color: white;
-  background-color: #84550e;
-}
-
 .section-about {
   background-color: rgb(46, 46, 46);
   display: flex;
@@ -2706,16 +2684,32 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .section-tabela{
   display: flex;
   flex-direction: column;
-  background-color: #157F4A;
+
 }
 
 .container-homepage-tabela{
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem
+}
+
+.container-homepage-tabela h1{
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 .table-sangue td{
   padding: 16px;
+  font-size: 1.2rem;
+  border: 1px solid;
+}
+
+.table-sangue table{
+  border-collapse: collapse;
+}
+
+.ajust{
+  border: hidden;
 }
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
@@ -2779,7 +2773,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: none;
+       
     }
 
     .orientacao-content 

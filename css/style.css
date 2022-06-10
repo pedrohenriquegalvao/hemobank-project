@@ -2577,7 +2577,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .orientation_container{
   display: flex;
   width: 81%;
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 .orientation_left{
@@ -2651,7 +2651,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .container-homepage-about{
   margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   max-width: 60%;
   display: flex;
   justify-content: center;
@@ -2667,6 +2667,56 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   color: white;
 }
 
+.section-requirements{
+
+}
+
+.container-homepage-requirements{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.organize-requirements{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.requirements-upper{
+  width: 70%;
+}
+
+.requirements-upper h1{
+  text-align: center;
+}
+
+.requirements-right{
+  width: 50%;
+}
+
+.requirements-left{
+  width: 50%;
+}
+
+.section-tabela{
+  display: flex;
+  flex-direction: column;
+  background-color: #157F4A;
+}
+
+.container-homepage-tabela{
+  display: flex;
+  flex-direction: column;
+}
+
+.table-sangue td{
+  padding: 16px;
+}
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */

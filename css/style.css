@@ -2489,9 +2489,6 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   box-sizing: border-box;
   font-family: "Montserrat", "sans-serif";
   line-height: 1.7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -2563,21 +2560,36 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .section-orientation{
   background: #590302;
-  height: 29rem;
+  height: 39rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .section-orientation h1{
   line-height: 1;
   margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.title-orientation{
+  color: white;
+  padding-top: 4rem;
 }
 
 .orientation_container{
   display: flex;
-  width: 81%;
-  margin-top: 6rem;
+  flex-direction: column;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+}
+
+.organize-orientation{
+  display: flex;
+  justify-content: center;
+  transform: translateY(-10%);
 }
 
 .orientation_left{
@@ -2590,15 +2602,58 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   margin: 1rem 0 3rem;
 }
 
+.Hemocentrobtn 
+{
+  width: 250px;
+  background-color: #f0ca1f;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+ 
+}
+
+.Hemocentrobtn:hover 
+{
+  background-color: #a40906;
+  color: rgb(255, 255, 255);
+}
+
 .orientation_right{
   display: flex;
-  gap: 1.2rem;
-  max-width: 40%;
+  flex-direction: column;
+}
+
+article p{
+  width: 180px;
+  height: 130px;
+}
+
+article{
+  margin: 10px;
+  text-align: left;
+
+}
+
+.article-upper{
+  display: flex;
+
+}
+
+.article-lower{
+  display: flex;
+
 }
 
 .orientation{
   background: #f0ca1f;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 2rem;
   transition: var(--transition);
 }
@@ -2611,10 +2666,6 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 /*.orientation:nth-child(2){
   background: green;
 }*/
-
-.orientation h5{
-  margin: 2rem 0 1rem;
-}
 
 .orientation p{
   font-size: 0.85rem;
@@ -2690,6 +2741,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .container-homepage-tabela{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 4rem
 }
 
@@ -2701,16 +2754,112 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .table-sangue td{
   padding: 16px;
   font-size: 1.2rem;
-  border: 1px solid;
+  border: none;
+  border-bottom: 1px solid #ebc5c5;
 }
 
 .table-sangue table{
   border-collapse: collapse;
 }
+/* -~-~-~-~-~-~-~-~-~-~ Responsive footer-~-~-~-~-~-~-~-~-~-~ */
 
-.ajust{
-  border: hidden;
+.footer .container-footer{
+	max-width: 1170px;
+	margin:auto;
+
 }
+
+.container-footer .row-footer{
+	display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.footer{
+	background-color: #590302;
+    padding: 80px 0;
+}
+
+.footer-col{
+   width: 20%;
+   padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #707070;
+	height: 2px;
+	box-sizing: border-box;
+	width: 60px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 17px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .emailDebi {
+    text-transform: none;
+}
+
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255, 0, 0, 0.458);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+  }
+}
+
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */

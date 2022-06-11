@@ -70,62 +70,53 @@
     <!--TERMINO DO HEADER-->
     <section class="section-orientation">
         <div class="container-homepage orientation_container">
-            <div class="orientation_left">
-                <h1><strong>Orientações para doação</strong></h1>
-                <p>Para agendar sua doação com sucesso, siga os passos demonstrados em formato de cards a seguir.
-                    Após realizar todos os passos da forma como foi solicitada, está tudo pronto! 
-                </p>
-                <p>Basta apenas se apresentar no Hemocentro designado, de acordo com sua data e hora escolhida.
-                </p>
+            <div class="title-orientation">
+                <h1><strong>ORIENTAÇÕES PARA DOAÇÃO</strong></h1>
             </div>
-            <div class="orientation_right">
-                <article class="orientation">
-                    <span class="step_icon"></span>
-                    <h5>Passo 1:</h5>
-                    <p>Relize seu login em nosso site para se tornar apto para um agendamento.</p>
-                </article>
-                <article class="orientation">
-                    <span class="step_icon"></span>
-                    <h5>Passo 2:</h5>
-                    <p>Selecione o Hemocentro desejado. Você poderá visualizar suas informações clicando 
-                        nos respectivos cards.
+            <div class="organize-orientation">
+                <div class="orientation_left">
+                    <p>Para agendar sua doação com sucesso, siga os passos demonstrados em formato de cards a seguir.
+                        Após realizar todos os passos da forma como foi solicitada, está tudo pronto! 
                     </p>
-                </article>
-                <article class="orientation">
-                    <span class="step_icon"></span>
-                    <h5>Passo 3:</h5>
-                    <p>Preencha o formulario de doação de forma correta. Isso o permitirá realizar um 
-                        agendamento caso esteja apto.
+                    <p>Basta apenas se apresentar no Hemocentro designado, de acordo com sua data e hora escolhida.
                     </p>
-                </article>
-                <article class="orientation">
-                    <span class="step_icon"></span>
-                    <h5>Passo 4:</h5>
-                    <p>Clique em realizar um agendamento, onde irá aparecer os horarios disponiveis.
-                         Feito isso basta apenas selecionar o horário desejado.
-                    </p>
-                </article>
+                    <input type="submit" name="submit" value="Visualizar hemocentros" class="Hemocentrobtn solid" onclick="window.location.href='formularioDoador.php'"/>
+                </div>
+                <div class="orientation_right">
+                    <div class="article-upper">
+                        <article class="orientation">
+                            <h5><strong>Passo 1:</strong></h5>
+                            <p>Relize seu login em nosso site para se tornar apto para um agendamento.</p>
+                        </article>
+                        <article class="orientation">
+                            <h5><strong>Passo 2:</strong></h5>
+                            <p>Selecione o Hemocentro desejado. Você poderá visualizar suas informações clicando 
+                                nos respectivos cards.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="article-lower">
+                        <article class="orientation">
+    
+                            <h5><strong>Passo 3:</strong></h5>
+                            <p>Preencha o formulario de doação de forma correta. Isso o permitirá realizar um 
+                                agendamento caso esteja apto.
+                            </p>
+                        </article>
+                        <article class="orientation">
+                            <h5><strong>Passo 4:</strong></h5>
+                            <p>Clique em realizar um agendamento, onde irá aparecer os horarios disponiveis.
+                                 Feito isso basta apenas selecionar o horário desejado.
+                            </p>
+                        </article>
+                    </div>
+            
+                </div>
             </div>
+            
         </div>
     </section>
     <!--TERMINO DAS ORIENTACOES-->
-    <section class="section-about">
-        <div class="container-homepage-about">
-            <div class="about-left">
-                <h2><strong>SOBRE O HEMOBANK</strong></h2>
-                <p>Nosso projeto começou com uma forma de incentivo para conscientizar as pessoas sobre a doação de sangue.
-                    No entanto, começamos juntando hemocentros do Paraná (PR) em nosso site, e houve um grande resultado 
-                    positivo. Após fomos aumentando nosso tamanho.
-                </p>
-                <p>
-                    Hoje temos orgulho de dizer que fizemos a agregação de todos os hemocentros do sul do Brasil. Somos o unico site 
-                    que emgloba mais de 1 hemocentro, assim deixando as coisas mais fáceis para você, doador.
-                </p>
-            </div>
-            <div class="about-right">
-            </div>
-        </div>        
-    </section>
     <section class="section-requirements">
         <div class="container-homepage-requirements">
             <div class="requirements-upper">
@@ -162,55 +153,121 @@
         <div class="container-homepage-tabela">
             <h1><strong>Quem doa para quem?</strong></h1>
             <table class="table-sangue">
-                <tr class="ajust">
+                <tr>
                     <td></td>
-                    <th class="ajust">Pode doar para:</td>
-                    <th class="ajust">Pode receber de:</td>
+                    <td>
+                        Pode doar para:
+                    </td>
+                    <td>
+                        Pode receber de:
+                    </td>
                 </tr>
                 <tr>
-                    <td>Sangue A+</td>
+                    <td>Sangue <strong>A+</strong></td>
                     <td>AB+ e A+</td>
                     <td>A+, A-, O+ e O-</td>
                 </tr>
                 <tr>
-                    <td>Sangue A-</td>
+                    <td>Sangue <strong>A-</strong></td>
                     <td>A+, A-, AB+ e AB-</td>
                     <td>A- e O-</td>
                 </tr>
                 <tr>
-                    <td>Sangue B+</td>
+                    <td>Sangue <strong>B+</strong></td>
                     <td>B+ e AB+</td>
                     <td>B+, B-, O+ e O-</td>
                 </tr>
                 <tr>
-                    <td>Sangue B-</td>
+                    <td>Sangue <strong>B-</strong></td>
                     <td>B+, B-, AB+ e AB-</td>
                     <td>B- e O-</td>
                 </tr>
                 <tr>
-                    <td>Sangue AB+</td>
+                    <td>Sangue <strong>AB+</strong></td>
                     <td>AB+</td>
                     <td>A+, B+, O+, AB+, A-, B-, O- e AB-</td>
                 </tr>
                 <tr>
-                    <td>Sangue AB-</td>
+                    <td>Sangue <strong>AB-</strong></td>
                     <td>AB+ e AB-</td>
                     <td>A-, B-, O- e AB-</td>
                 </tr>
                 <tr>
-                    <td>Sangue O+</td>
+                    <td>Sangue <strong>O+</strong></td>
                     <td>A+, B+, O+ e AB+</td>
                     <td>O+ e O-</td>
                 </tr>
                 <tr>
-                    <td>Sangue O-</td>
+                    <td>Sangue <strong>O-</strong></td>
                     <td>A+, B+, O+, AB+, A-, B-, O- e AB-</td>
                     <td>O-</td>
                 </tr>
             </table>
         </div>
     </section>
+    <section class="section-about">
+        <div class="container-homepage-about">
+            <div class="about-left">
+                <h2><strong>SOBRE O HEMOBANK</strong></h2>
+                <p>Nosso projeto começou com uma forma de incentivo para conscientizar as pessoas sobre a doação de sangue.
+                    No entanto, começamos juntando hemocentros do Paraná (PR) em nosso site, e houve um grande resultado 
+                    positivo. Após fomos aumentando nosso tamanho.
+                </p>
+                <p>
+                    Hoje temos orgulho de dizer que fizemos a agregação de todos os hemocentros do sul do Brasil. Somos o unico site 
+                    que emgloba mais de 1 hemocentro, assim deixando as coisas mais fáceis para você, doador.
+                </p>
+            </div>
+            <div class="about-right">
+            </div>
+        </div>        
+    </section>
+    <footer class="footer" id="contato">
+        <div class="container-footer">
+            <div class="row-footer">
 
-    <script src="js/homePage.js"></script>
+                <div class="footer-col">
+                    <h4>CONTEUDOS</h4>
+                    <ul>
+                        <li><a href="#">Por que doar?</a></li>
+                        <li><a href="#">Orientações</a></li>
+                        <li><a href="#">Quem doa para quem?</a></li>
+                        <li><a href="#">Requisitos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>DOAÇÃO DE SANGUE</h4>
+                    <ul>
+                        <li><a href="#">áreas de conhecimento</a></li>
+                        <li><a href="#">questionário survey</a></li>
+                        <li><a href="#">Fórum</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>HEMOBANK</h4>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">fone: 3018-1920</a></li>
+                        <li><a href="#">Whatsapp:(41)98543-7175</a></li>
+                        <li><a href="#" class="emailDebi">Email: hemobank@blood.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>REDES SOCIAIS</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            
+                
+        </div>
+        
+   </footer>
 </body>
 </html>

@@ -51,13 +51,10 @@
 </head>
 <body>
     
-    <div class="HemocentroCadastro">
-        <div class="HemocentroCadastro-container">
+    <div class="HemocentroCadastro-container">
+        <div class="HemocentroCadastro-form-container">
             <div class="HemocentroCadastro-content">
-                <div class="image-box">
-                    <img src="img/blood-work-illustration@3x.png" alt="">
-                </div>
-
+             <div class="HemocentroCadastro-flex">
                 <form action="saveEdit.php" method="POST" enctype="multipart/form-data">
                     <div class="topic">Editar Hemocentro</div>
 
@@ -127,16 +124,25 @@
                         <input type="hidden" name="CodHemocentro" value="<?php echo $CodHemocentro ?>">
                         <input type="submit" name="update" id="update" value="Salvar alterações">
                     </div>
-                </form>
 
+                    </form>
+                </div>
             </div>
         </div>
 
-        
+    </div>
+
+    <div class="panel left-panel-form-hemocentro-cadastro">
+
+        <div class="content-form-doador">
+            <h3>Cadastro Hemocentro</h3>
+            <p>Preencha o formulário abaixo para realizar o cadastro do hemocentro!</p>
+        </div>
+
+        <img src="img/health-professional-team-animate-formHemo.svg" class="image" alt="" />
     </div>
 
     <div id="popup-check">
-    <a class="link-voltar-hemo" href="hemocentros.php">Voltar</a>
 </body>
 <script>
     function previewBeforeUpload(id){

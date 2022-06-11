@@ -165,75 +165,6 @@ nav .menu-btn
 
 
 /* -~-~-~-~-~-~-~-~-~-~ FORM CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
-
-.HemocentroCadastro
-{
-    height: auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-family: 'Poppins',sans-serif;
-    z-index: 9;
-}
-
-.HemocentroCadastro::before
-{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
-
-.HemocentroCadastro-container
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 12;
-    max-width: 1400px;
-    width: 100%;
-    background: #fff;
-    border-radius: 12px;
-    margin: 0 20px;
-}
-
-.HemocentroCadastro-container .HemocentroCadastro-content
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 20px;
-}
-
-.HemocentroCadastro-content .image-box
-{
-    max-width: 55%;
-}
-
-.HemocentroCadastro-content .image-box img
-{
-    width: 90%;
-    padding: 20px;
-    margin-left: 20px;
-}
-
-.HemocentroCadastro-content .topic
-{
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--Cor-4);
-}
-
-.HemocentroCadastro-content form
-{
-    width: 40%;
-    margin-right: 30px;
-}
-
 .HemocentroCadastro-content .input-box
 {
     height: 50px;
@@ -357,105 +288,7 @@ nav .menu-btn
     border: var(--Cor-3);
 }
 
-.form-card-title
-{
-    margin: 100px 0px 50px 0px;
-    text-align: center;
-    color: var(--Cor-2);
-}
-
-.form-card-content
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
-}
-
-.form-card
-{
-    background: var(--Cor-4);
-    width: 500px;
-    height: 480px;
-    margin: 20px;
-    box-shadow: 11px 8px 0px #79c9db;
-    box-sizing: border-box;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.form-card h4
-{
-    font-size: 18px;
-}
-
-.form-card hr
-{
-    color: var(--Cor-1);
-}
-
-.empty-form
-{
-    text-align: center;
-    color: var(--Cor-2);
-}
-
-.empty-form i
-{
-    color: var(--Cor-2);
-    margin-top: 30px;
-    font-size: 80px;
-    margin-bottom: 40px;
-}
-
-.endereco-flex
-{
-    display: flex;
-}
-
-.input-box.numeroHemo 
-{
-    width: 30%;
-    margin-left: 10px;
-    margin-top: 0;
-}
-
-.input-box.ruaHemo 
-{
-    margin-top: 0px !important;
-}
-
 /* -~-~-~-~-~-~-~-~-~-~ Estilo do Input File -~-~-~-~-~-~-~-~-~-~ */
-
-/*input[type="file"] {
-    display: none;
-}
-
-.input-file{
-    margin: auto;
-    padding: 15px 20px;
-    width: 100%;
-    background-color: #BF0404;
-    border-radius: 5px;
-    color: #FFF;
-    display: block;
-    margin-top: 12px;
-    cursor: pointer;
-    justify-items: center;
-    transition: 0.5s ease;
-}
-
-.label-hemo{
-    background: #BF0404;
-    height: 20px;
-    border-radius: 5px;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.5s ease;
-}
-*/
 
 .form {
     margin:20px 0px 20px;
@@ -502,6 +335,146 @@ nav .menu-btn
     font-size:40px;
   }
 
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.HemocentroCadastro-content
+{
+    width: 40%;
+    float: right;
+    margin-right: 100px;
+    margin-top: 100px;
+}
+
+.HemocentroCadastro-container:before 
+{
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(-45deg, var(--Cor-3) 0%, var(--Cor-3) 100%);
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.image 
+{
+  width: 100%;
+  transition: transform 1.1s ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.panel 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 6;
+}
+
+.left-panel-form-hemocentro-cadastro
+{
+  pointer-events: all;
+  padding: 10rem 8% 2rem 13%;
+  position: relative;
+}
+
+
+.left-panel 
+{
+    pointer-events: all;
+    padding: 10rem 8% 2rem 13%;
+    position: relative;
+}
+
+.panel .content-form-doador 
+{
+  color: #fff;
+  transition: transform 0.9s ease-in-out;
+  transition-delay: 0.6s;
+}
+
+.panel h3 
+{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 2rem;
+}
+
+.panel p 
+{
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+    margin-bottom: 50px;
+}
+
+.content-form-doador-mobile
+{
+  display: none;
+}
+
+.content-form-doador-mobile h3 
+{
+  color: var(--Cor-4);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.content-form-doador-mobile p 
+{
+  color: #706f6f;
+}
+
+@media (max-width: 1100px)
+{
+  .HemocentroCadastro-content 
+  {
+    width: 40%;
+    float: right;
+    margin-right: 50px;
+    margin-top: 40px;
+  }
+
+  .left-panel
+  {
+    pointer-events: all;
+    padding: 10rem 3% 2rem 13%;
+    position: relative;
+    right: 80px;
+  }
+}
+
+@media (max-width: 700px)
+{
+  .HemocentroCadastro-container:before
+  {
+    display: none;
+  }
+
+  .panel
+  {
+    display: none;
+  }
+
+  .HemocentroCadastro-content
+  {
+    width: 100%;
+    margin: 0;
+    padding: 40px;
+  }
+
+  .content-form-doador-mobile
+  {
+    display: block;
+  }
+
+}
 /* -~-~-~-~-~-~-~-~-~-~ PÁGINA SUCESSO CADASTRO HEMOCENTRO -~-~-~-~-~-~-~-~-~-~ */
 
 .sucess-form-hemo

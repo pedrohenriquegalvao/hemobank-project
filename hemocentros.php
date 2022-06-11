@@ -42,9 +42,9 @@
             </div>
 
             <div class="menu">
-                <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
+                <div class="item"><a href="homePage.html"><i class="fas fa-desktop"></i>Home</a></div>
                 <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
-                <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
+                <div class="item"><a href="homePage.html"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
                 <div class="item"><a href="perfilDoador.php"><i class="fa-solid fa-user"></i>Meu Perfil</a></div>
 
                 <div class="item">

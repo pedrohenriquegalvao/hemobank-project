@@ -2761,6 +2761,10 @@ article{
 .table-sangue table{
   border-collapse: collapse;
 }
+
+html{
+  scroll-behavior: smooth;
+}
 /* -~-~-~-~-~-~-~-~-~-~ Responsive footer-~-~-~-~-~-~-~-~-~-~ */
 
 .footer .container-footer{

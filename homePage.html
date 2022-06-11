@@ -34,7 +34,7 @@
             <div class="menu">
                 <div class="item"><a href="#"><i class="fas fa-desktop"></i>Home</a></div>
                 <div class="item"><a href="hemocentros.php"><i class="fa-solid fa-house-chimney-medical"></i>Hemocentros</a></div>
-                <div class="item"><a href="#"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
+                <div class="item"><a href="#sobre"><i class="fa-solid fa-building"></i>Sobre Nós</a></div>
 
                 <div class="item">
                     <a class="sub-btn"><i class="fa-solid fa-right-to-bracket"></i></i>Cadastro<i
@@ -68,7 +68,7 @@
         </header>
     </div>
     <!--TERMINO DO HEADER-->
-    <section class="section-orientation">
+    <section class="section-orientation" id="orientation">
         <div class="container-homepage orientation_container">
             <div class="title-orientation">
                 <h1><strong>ORIENTAÇÕES PARA DOAÇÃO</strong></h1>
@@ -80,7 +80,7 @@
                     </p>
                     <p>Basta apenas se apresentar no Hemocentro designado, de acordo com sua data e hora escolhida.
                     </p>
-                    <input type="submit" name="submit" value="Visualizar hemocentros" class="Hemocentrobtn solid" onclick="window.location.href='formularioDoador.php'"/>
+                    <input type="submit" name="submit" value="Visualizar hemocentros" class="Hemocentrobtn solid" onclick="window.location.href='hemocentros.php'"/>
                 </div>
                 <div class="orientation_right">
                     <div class="article-upper">
@@ -117,7 +117,7 @@
         </div>
     </section>
     <!--TERMINO DAS ORIENTACOES-->
-    <section class="section-requirements">
+    <section class="section-requirements" id="requisitos">
         <div class="container-homepage-requirements">
             <div class="requirements-upper">
                 <h1><strong>Quais são os requisitos para doação de sangue?</strong></h1>
@@ -126,7 +126,7 @@
                     consentimento formal dos responsáveis. Pessoas com febre, gripe ou resfriado, diarreia 
                     recente, grávidas e mulheres no pós-parto não podem doar temporariamente.</p>
             </div>
-            <div class="organize-requirements">
+            <div class="organize-requirements" >
                 <div class="requirements-left">
                     <img src="img/blood-donation-requirements.svg">
                 </div>
@@ -149,7 +149,7 @@
             </div>
         </div>
     </section>
-    <section class="section-tabela">
+    <section class="section-tabela" id="tabela">
         <div class="container-homepage-tabela">
             <h1><strong>Quem doa para quem?</strong></h1>
             <table class="table-sangue">
@@ -205,7 +205,7 @@
             </table>
         </div>
     </section>
-    <section class="section-about">
+    <section class="section-about" id="sobre">
         <div class="container-homepage-about">
             <div class="about-left">
                 <h2><strong>SOBRE O HEMOBANK</strong></h2>
@@ -230,25 +230,24 @@
                     <h4>CONTEUDOS</h4>
                     <ul>
                         <li><a href="#">Por que doar?</a></li>
-                        <li><a href="#">Orientações</a></li>
-                        <li><a href="#">Quem doa para quem?</a></li>
-                        <li><a href="#">Requisitos</a></li>
+                        <li><a href="#orientation">Orientações</a></li>
+                        <li><a href="#tabela">Quem doa para quem?</a></li>
+                        <li><a href="#requisitos">Requisitos</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>DOAÇÃO DE SANGUE</h4>
                     <ul>
-                        <li><a href="#">áreas de conhecimento</a></li>
-                        <li><a href="#">questionário survey</a></li>
-                        <li><a href="#">Fórum</a></li>
+                        <li><a href="perfilDoador.php">Meu perfil</a></li>
+                        <li><a href="#">Doar</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>HEMOBANK</h4>
                     <ul>
-                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#">fone: 3018-1920</a></li>
                         <li><a href="#">Whatsapp:(41)98543-7175</a></li>
                         <li><a href="#" class="emailDebi">Email: hemobank@blood.com</a></li>

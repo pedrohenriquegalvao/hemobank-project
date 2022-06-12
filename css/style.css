@@ -2533,7 +2533,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .section-orientation{
   background: #590302;
-  height: 39rem;
+  height: 39%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2667,10 +2667,6 @@ article{
 
 .about-left{
   color: white;
-}
-
-.section-requirements{
-
 }
 
 .container-homepage-requirements{
@@ -2839,7 +2835,36 @@ html{
 
 /* -~-~-~-~-~-~-~-~-~-~ Responsive -~-~-~-~-~-~-~-~-~-~ */
 
+
+article{
+  margin: 10px;
+  text-align: left;
+
+}
+
+@media (max-width:1000px) 
+{
+    .organize-orientation{
+      flex-direction: column;
+      background-color: black;
+      margin-top: 30px;
+    }
+    .article-upper, .article-lower {
+      background-color: black;
+      flex-direction: column;
+      
+    }
+
+    .article-orientation{
+      max-width: 50%;
+    }
+}
+
+
+
+
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */
+
 @media (max-width:1000px) 
 {
     .HemocentroCadastro-content .image-box

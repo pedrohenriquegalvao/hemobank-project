@@ -1,21 +1,22 @@
 <?php 
-if(!empty($_GET['CodHemocentro'])) 
+if(!empty($_GET['CodHemocentro'])) #Se o $GET($POST feito pela pagina anterior na URL) não estiver vazio:
 {
     session_start(); //Utilizado *sempre* que iniciar uma sessão 
     
-    include_once("config.php");
+    include_once("config.php"); #Chama as configurações básicas de conexao com o BD
 
-    $CodHemocentro = $_GET['CodHemocentro'];
+    $CodHemocentro = $_GET['CodHemocentro']; #coloca o CodHemocentro passado pela URL em uma variável
 
-    $sql = "SELECT * FROM Hemocentro WHERE CodHemocentro=$CodHemocentro";
+    $sql = "SELECT * FROM Hemocentro WHERE CodHemocentro=$CodHemocentro"; #Utiliza a variavel declarada acima para fazer o SELECT do Hemocentro desejado, atráves do seu código
 
-    $result = $conexao->query($sql);
+    $result = $conexao->query($sql); #Pega o resultado do SELECT feito acima, utiliza a variável global $conexao (vem do config.php) e faz a query que foi armazenada na variável $sql acima. 
+    #O resultado dessa busca é colocado na variavel $result
 
-    if($result->num_rows > 0) 
+    if($result->num_rows > 0) #Se o numero de linhas do $result for > que 0, ou seja, foi encontrado um registro com esse codigo de hemocentro:
     { 
-        while($user_data = mysqli_fetch_assoc($result)) 
+        while($user_data = mysqli_fetch_assoc($result)) #Cria a variavel $user_data para utilizar a funcao mysqli_fetch_assoc. Essa função vai percorrer cada coluna do registro passado como parametro, no caso o $result feito acima
         { 
-            $CodHemocentro = $user_data['CodHemocentro'];
+            $CodHemocentro = $user_data['CodHemocentro']; #Pega a posição CodHemocentro desse registro e coloca na variavel. O nome da posição bate com campo da tabela no BD
             $nomeHemo = $user_data['Nome'];
             $emailHemo = $user_data['Email'];
             $telefoneHemo = $user_data['Telefone'];
@@ -26,12 +27,13 @@ if(!empty($_GET['CodHemocentro']))
             $numeroHemo =$user_data['Numero'];
             $mensagemCont = $user_data['Mensagem'];
             $fotoHemo = $user_data['FotoHemo'];
-            
+            #cada coluna do hemocentro é colocada em uma variavel
+            #Essa variáveis são utilizadas mais abaixo no *HTML* para listar os dados do hemocentro na tela do site.
         }
     }
 
     if(isset($_SESSION['cpf']) == true and (isset($_SESSION['senha'])) == true)
-    {
+    { #Confere se há uma sessão ativa.
         echo 
         '  
             <style>

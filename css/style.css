@@ -419,6 +419,12 @@ nav .menu-btn
   display: none;
 }
 
+.topic{
+  color: var(--Cor-4);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
 .content-form-doador-mobile h3 
 {
   color: var(--Cor-4);
@@ -2827,9 +2833,17 @@ html{
   }
 }
 
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
+@media(max-width: 590px){
+  .footer-col:nth-child(4n){
+    width: 59%;
+    display: block;
+  }
+
+  .row-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -2844,24 +2858,107 @@ article{
 
 @media (max-width:1000px) 
 {
-    .organize-orientation{
-      flex-direction: column;
-      background-color: black;
-      margin-top: 30px;
-    }
-    .article-upper, .article-lower {
-      background-color: black;
-      flex-direction: column;
-      
+    .section-orientation{
+      padding-bottom: 25rem;
+      justify-content: center;
+      align-items: center;
     }
 
-    .article-orientation{
-      max-width: 50%;
+    .organize-orientation{
+      flex-direction: column;
+      margin-top: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+    .article-upper, .article-lower {
+      max-width: 210px;
+      max-height: 210px;
+      flex-direction: column;      
+    }
+
+    .orientation_left{
+      text-align: center;
+      margin-right: 0rem;
+    }
+
+    .orientation_right{
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .orientation-container{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .orientation{
+      margin-bottom: 13rem;
+    }
+
+}
+
+@media (max-width:800px) {
+  .requirements-left{
+    width: 0px;
+  }
+
+  .header_right{
+    width: 0px;
+  }
+}
+
+@media (max-width:530px) 
+{
+    .section-orientation{
+      justify-content: center;
+      align-items: center;
+    }
+    .organize-orientation{
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    .article-upper, .article-lower {
+      flex-direction: column;
+      text-align: center;
+      max-width: 210px;
+      max-height: 210px; 
+    }
+    .orientation_right{
+      width: 210px;
+    }
+
+    .orientation_left{
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .organize-orientation{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title-orientation{
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .Hemocentrobtn{
+      width: 0px;
+    }
+
+    .header-homepage{
+      display: flex;
+      flex-direction: column;
     }
 }
 
-
-
+@media (max-width: 350px){
+  .centraliza-header{
+    margin: 10% 10% 10% 22%;
+  }
+}
 
 /* -------------------- RESPONSIVIDADE FORMULÁRIO HEMOCENTRO -------------------- */
 

@@ -17,6 +17,8 @@
 #### ♢ Atualizar Estoque de Sangue e de Hemocomponentes
 #### ♢ Realizar Agendamento
 
+###  ♢ Link do vídeo demostrando as funcionalidades em execução: https://www.youtube.com/watch?v=LzeFtapzvgo
+
 # Artefatos
 
 ## Canvas PBB (Product Backlog Building)

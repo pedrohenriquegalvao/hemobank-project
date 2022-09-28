@@ -10,12 +10,12 @@
 
 # Funcionalidades Implementadas
 
-## ♢ CRUD do Hemocentro
-## ♢ Realizar Cadastro do Doador
-## ♢ Realizar Login do Doador
-## ♢ Criar Agenda
-## ♢ Atualizar Estoque de Sangue e de Hemocomponentes
-## ♢ Realizar Agendamento
+#### ♢ CRUD do Hemocentro
+#### ♢ Realizar Cadastro do Doador
+#### ♢ Realizar Login do Doador
+#### ♢ Criar Agenda
+#### ♢ Atualizar Estoque de Sangue e de Hemocomponentes
+#### ♢ Realizar Agendamento
 
 # Artefatos
 

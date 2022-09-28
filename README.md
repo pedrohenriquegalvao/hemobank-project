@@ -6,7 +6,7 @@
 
 # Autores
 
-| [<img src="![Uploading vini.jfif…]()" width=115><br><sub>Gustavo Guimarães Martins</sub>](https://github.com/GustavoGuimaraes32) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Pedro Henrique Galvão</sub>](https://github.com/pedrohenriquegalvao) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Leonardo Fernandes Alves</sub>](https://github.com/alvessleo) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Vinícius Valentin Nogozzeky</sub>](https://github.com/ViniciusNogozzeky)
+| [<img src="https://avatars.githubusercontent.com/u/90704921?v=4" width=115><br><sub>Gustavo Guimarães Martins</sub>](https://github.com/GustavoGuimaraes32) |  [<img src="https://avatars.githubusercontent.com/u/70819419?v=4" width=115><br><sub>Pedro Henrique Galvão</sub>](https://github.com/pedrohenriquegalvao) |  [<img src="https://avatars.githubusercontent.com/u/90728273?v=4" width=115><br><sub>Leonardo Fernandes Alves</sub>](https://github.com/alvessleo) |  [<img src="https://avatars.githubusercontent.com/u/102973197?v=4" width=115><br><sub>Vinícius Valentin Nogozzeky</sub>](https://github.com/ViniciusNogozzeky)
 | :---: | :---: | :---: | :---: |
 
 # Sobre

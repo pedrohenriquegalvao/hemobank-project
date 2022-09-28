@@ -4,6 +4,11 @@
 
 ### Projeto realizado no 3 Período na materia de Experiência Criativa: Projetando Soluções Computacionais
 
+# Autores
+
+| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Gustavo Guimarães Martins</sub>](https://github.com/GustavoGuimaraes32) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Pedro Henrique Galvão</sub>](https://github.com/pedrohenriquegalvao) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Leonardo Fernandes Alves</sub>](https://github.com/alvessleo) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Vinícius Valentin Nogozzeky</sub>](https://github.com/ViniciusNogozzeky)
+| :---: | :---: | :---: | :---: |
+
 # Sobre
 
 ### HemoBank é um projeto que possui o objetivo de facilitar o processo de doação de sangue. Sendo que nosso sistema será possível que os hemocentros possam se cadastrar no sistema e as pessoas interessadas em realizar a doação de sangue possa selecionar um Hemocentro e realizar o agendamento da doação dentro do site.

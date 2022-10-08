@@ -74,7 +74,7 @@
             <input type="password" placeholder="Confirmar Senha" id="confirmSenha" maxlength="32"/>
           </div>
 
-          <input type="submit" class="Cadastrobtn" value="Cadastrar"/>
+          <input type="submit" class="Cadastrobtn" value="Cadastrar" name="CadastrobtnDoador"/>
 
         </form>
 
